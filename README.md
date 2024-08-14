@@ -59,8 +59,6 @@ password reset using **Resend** for sending email.
 
 - **Resend:** A simple, elegant interface so you can start sending emails in minutes.
 
-![Trips page](https://res.cloudinary.com/dkofkuquf/image/upload/v1718234778/nuxtshop/bbn9mnnuvi5xoygawv8l.png)
-![User profile](https://res.cloudinary.com/dkofkuquf/image/upload/v1718235273/nuxtshop/b8rvgta0h8g4ppn8febm.png)
 
 ## Setup
 
