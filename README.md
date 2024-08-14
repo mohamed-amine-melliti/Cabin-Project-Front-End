@@ -130,15 +130,5 @@ password reset using **Resend** for sending email.
 
    ```
 
-6. **Open your browser and visit http://localhost:3000 to view your Vacation Rental
+6. **Open your browser and visit http://localhost:3000 to view the
    Platform.**
-
-## Live Version
-
-[https://staystrella.atalek.com/](https://staystrella.atalek.com/)
-
-## Author
-
-Github [@atalek](https://github.com/atalek) <br> Linkedin:
-[@Aleksandar Atanasovski](https://www.linkedin.com/in/aleksandar-atanasovski-16b123263/)
-<br> Portfolio: [https://www.atalek.com/](https://www.atalek.com/)
