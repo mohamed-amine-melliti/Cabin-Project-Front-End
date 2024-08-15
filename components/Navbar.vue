@@ -19,26 +19,23 @@
                     class="flex flex-wrap gap-6 items-center self-stretch py-2 pr-2 pl-4 my-auto text-sm leading-6 text-blue-600 rounded-[40px]">
 
                     <div class="menu">
-                        <ul>
-                            <li>
-                                <a href="#">
-                                    <img src=" https://cdn.builder.io/api/v1/image/assets/TEMP/da815991acbf72b38edc68851939fe8971e69bcfebea46b699d0e7c306db4c29?placeholderIfAbsent=true&apiKey=5b20c0d534a34f0091744edaaeed1afd"
-                                        alt="User Icon"
+                        <select>
+                            <option selected>
+                                    <img src="/cz.svg" alt="User Icon"
                                         class="object-contain shrink-0 self-stretch my-auto aspect-[1.37] w-[26px]" />
-                                        English</a>
-                            </li>
-                        </ul></div>
+                                
+                            </option>
+                        </select>
+                    </div>
 
-                        <img src=" https://cdn.builder.io/api/v1/image/assets/TEMP/da815991acbf72b38edc68851939fe8971e69bcfebea46b699d0e7c306db4c29?placeholderIfAbsent=true&apiKey=5b20c0d534a34f0091744edaaeed1afd"
-                            alt="User Icon"
-                            class="object-contain shrink-0 self-stretch my-auto aspect-[1.37] w-[26px]" />
-                        <div class="flex gap-4 justify-center items-center self-stretch my-auto">
-                            <button class="self-stretch my-auto">Register</button>
-                            <div class="flex shrink-0 self-stretch my-auto w-px bg-zinc-300 h-[22px]"></div>
-                            <button class="self-stretch my-auto">Sign in</button>
-                        </div>
+
+                    <div class="flex gap-4 justify-center items-center self-stretch my-auto">
+                        <button class="self-stretch my-auto">Register</button>
+                        <div class="flex shrink-0 self-stretch my-auto w-px bg-zinc-300 h-[22px]"></div>
+                        <button class="self-stretch my-auto">Sign in</button>
                     </div>
                 </div>
+            </div>
         </nav>
     </header>
 </template>
