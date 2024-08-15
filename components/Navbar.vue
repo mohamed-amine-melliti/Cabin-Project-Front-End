@@ -1,105 +1,52 @@
-<script lang="ts" setup></script>
-
 <template>
-    <section class="z-10 w-full bg-white shadow-sm">
-        <div class="p-4 border-b-2">
-            <Container>
-                <nav class="flex items-center justify-between flex-grow gap-3 md:gap-0">
-                    <!---- <NavLogo />
-          <NavSearch />
-          <NavUserMenu /> --->
+    <header class="flex flex-col items-center">
+        <nav class="flex flex-col w-full max-md:max-w-full">
+            <div
+                class="flex flex-wrap justify-between items-center px-12 w-full bg-white border-b border-black border-opacity-40 shadow-[0px_1px_1px_rgba(0,0,0,0.13)] max-md:px-5 max-md:max-w-full">
+                <div class="flex items-start self-stretch py-6 my-auto w-8">
+                    <a href="/">
+                        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/0d94eb955a9911f127502f228d4b5bd9c7d8dfc5042ed9c3733608221b0d7c07?placeholderIfAbsent=true&apiKey=5b20c0d534a34f0091744edaaeed1afd"
+                            alt="Company Logo" class="object-contain w-8 aspect-square" />
+                    </a>
+                </div>
+                <div
+                    class="flex flex-wrap flex-1 shrink gap-10 items-center self-stretch pl-12 my-auto text-sm font-semibold leading-none text-black basis-0 min-w-[240px] max-md:max-w-full">
+                    <a href="#" class="self-stretch my-auto">Domů</a>
+                    <a href="#" class="self-stretch my-auto">Přehled nabídky</a>
+                    <a href="#" class="self-stretch my-auto">O nás</a>
+                </div>
+                <div
+                    class="flex flex-wrap gap-6 items-center self-stretch py-2 pr-2 pl-4 my-auto text-sm leading-6 text-blue-600 rounded-[40px]">
 
-                    <header>
-                        <div class="container">
-                            <div class="logo">
-                                <img src="/logo.png" alt="Logo">
-                            </div>
-                            <div class="left-section">
-                                <div class="nav-items">
-                                    <a  style="font-weight: 700;" href="#">Domů</a>
-                                    <a style="font-weight: 700;" href="#">Přehled nabídky</a>
-                                    <a style="font-weight: 700;" href="#">O nás</a>
-                                </div>
-                            </div>
-                            <div class="right-section">
-                                <div class="lang-buttons">
-                                    <button class="lang-button active" data-lang="cz">CZ</button>
-                                    <button class="lang-button" data-lang="en">EN</button>
-                                </div>
-                                <div class="auth-buttons">
-                                    <button>Register</button>
-                                    <button>Sign in</button>
-                                </div>
-                            </div>
+                    <div class="menu">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img src=" https://cdn.builder.io/api/v1/image/assets/TEMP/da815991acbf72b38edc68851939fe8971e69bcfebea46b699d0e7c306db4c29?placeholderIfAbsent=true&apiKey=5b20c0d534a34f0091744edaaeed1afd"
+                                        alt="User Icon"
+                                        class="object-contain shrink-0 self-stretch my-auto aspect-[1.37] w-[26px]" />
+                                        English</a>
+                            </li>
+                        </ul></div>
+
+                        <img src=" https://cdn.builder.io/api/v1/image/assets/TEMP/da815991acbf72b38edc68851939fe8971e69bcfebea46b699d0e7c306db4c29?placeholderIfAbsent=true&apiKey=5b20c0d534a34f0091744edaaeed1afd"
+                            alt="User Icon"
+                            class="object-contain shrink-0 self-stretch my-auto aspect-[1.37] w-[26px]" />
+                        <div class="flex gap-4 justify-center items-center self-stretch my-auto">
+                            <button class="self-stretch my-auto">Register</button>
+                            <div class="flex shrink-0 self-stretch my-auto w-px bg-zinc-300 h-[22px]"></div>
+                            <button class="self-stretch my-auto">Sign in</button>
                         </div>
-                    </header>
-
-                </nav>
-            </Container>
-        </div>
-        <Categories />
-    </section>
+                    </div>
+                </div>
+        </nav>
+    </header>
 </template>
 
+<script lang="ts">
+import { defineComponent } from 'vue';
 
-<style scoped>
-header {
-    height: 60px; /* Adjust height as needed */
-    background-color: #fff; /* Adjust background color */
-    display: flex;
-    align-items: center;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px; /* Adjust max-width as needed */
-    margin: 0 auto;
-}
-
-.logo img {
-    width: 40px; /* Adjust width as needed */
-    height: auto;
-}
-
-.left-section {
-    margin-left: 50px; /* Adjust margin as needed */
-}
-
-.nav-items {
-    display: flex;
-    list-style: none;
-    margin: 50px;
-    padding: 50px;
-}
-
-.nav-items a {
-    text-decoration: none;
-    color: #333; /* Adjust color as needed */
-    margin-right: 20px;
-}
-
-.right-section {
-    margin-right: 20px; /* Adjust margin as needed */
-}
-
-.lang-buttons, .auth-buttons {
-    display: flex;
-    align-items: center;
-}
-
-.lang-buttons button, .auth-buttons button {
-    background: none;
-    border: none;
-    color: #333; /* Adjust color as needed */
-    cursor: pointer;
-    margin-left: 10px;
-    padding: 5px 10px;
-}
-
-.lang-button.active {
-    background-color: #f0f0f0; /* Adjust background color as needed */
-}
-</style>
+export default defineComponent({
+    name: 'Navbar',
+});
+</script>

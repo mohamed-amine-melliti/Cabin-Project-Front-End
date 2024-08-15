@@ -16,13 +16,14 @@ watch(
 
 <template>
   <Container v-if="isMainPage">
-    <div style="background-color: #f7f7f7;" class="pt-4 flex flex-row items-center justify-between overflow-x-auto">
+    <div style="background-color: #F8F8F8; opacity: 50%;" class="pt-4 flex flex-row items-center justify-between overflow-x-auto">
       <CategoryBox
         v-for="item in categories"
         :key="item.label"
         :label="item.label"
         :selected="category === item.label"
-        :icon="item.icon" />
+        :icon="item.icon" 
+         />
     </div>
   </Container>
 </template>
