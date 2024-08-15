@@ -68,7 +68,7 @@ useSeoMeta({
         big />
 
       <Heading
-        title="Welcome to Staystrella "
+        title="Welcome to Mega Chalupy "
         subTitle="Create an account" />
       <form
         @submit.prevent="register"

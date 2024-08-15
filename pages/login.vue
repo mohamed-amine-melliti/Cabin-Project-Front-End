@@ -54,7 +54,7 @@ useSeoMeta({
         class="mx-auto"
         big />
       <Heading
-        title="Welcome to Staystrella "
+        title="Welcome to Mega Chalupy "
         subTitle="Log in to your account" />
 
       <form

@@ -5,10 +5,10 @@ const currentYear = new Date().getFullYear()
 <template>
   <footer class="w-full py-4 border-t-2 '">
     <NuxtLink
-      href="https://github.com/atalek/staystrella"
+      href="https://github.com/atalek/Mega Chalupy"
       target="_blank"
       class="flex items-center justify-center md:text-lg hover:text-primary"
-      >© {{ currentYear }} Staystrella - Made by atalek
+      >© {{ currentYear }} Mega Chalupy - Made by atalek
       <Icon
         name="fa6-brands:github"
         class="ml-2 size-5" />

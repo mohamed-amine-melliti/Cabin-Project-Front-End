@@ -1,6 +1,6 @@
 export const resetPassword = `<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
-    <title>Staystrella</title>
+    <title>Mega Chalupy</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0" />
@@ -122,7 +122,7 @@ export const resetPassword = `<html xmlns="http://www.w3.org/1999/xhtml">
                   <img
                     src="https://res.cloudinary.com/dkofkuquf/image/upload/v1718059297/nuxtshop/milpepaqvyylyl9yk9vm.png"
                     class="logo"
-                    alt="Staystrella Logo"
+                    alt="Mega Chalupy Logo"
                     style="
                       box-sizing: border-box;
                       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -387,7 +387,7 @@ export const resetPassword = `<html xmlns="http://www.w3.org/1999/xhtml">
                           text-align: left;
                         ">
                         Regards,<br />
-                        Staystrella
+                        Mega Chalupy
                       </p>
 
                       <table
@@ -520,7 +520,7 @@ export const resetPassword = `<html xmlns="http://www.w3.org/1999/xhtml">
                           font-size: 12px;
                           text-align: center;
                         ">
-                        © 2024 Staystrella. All rights reserved.
+                        © 2024 Mega Chalupy. All rights reserved.
                       </p>
                     </td>
                   </tr>

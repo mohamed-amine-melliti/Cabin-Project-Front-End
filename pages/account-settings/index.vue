@@ -35,7 +35,7 @@ useSeoMeta({
         <div class="mt-8 mb-4">
           <Heading
             title="Edit Your Profile"
-            subTitle="Your Staystrella  profile is an important part of every reservation. Create yours to help other Hosts and guests get to know you" />
+            subTitle="Your Mega Chalupy  profile is an important part of every reservation. Create yours to help other Hosts and guests get to know you" />
         </div>
       </NuxtLink>
     </div>

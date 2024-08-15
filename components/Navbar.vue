@@ -1,51 +1,48 @@
 <script lang="ts" setup></script>
 
 <template>
-  <section class="z-10 w-full bg-white shadow-sm">
-    <div class="p-4 border-b-2">
-      <Container>
-        <nav class="flex items-center justify-between flex-grow gap-3 md:gap-0">
-          <!---- <NavLogo />
+    <section class="z-10 w-full bg-white shadow-sm">
+        <div class="p-4 border-b-2">
+            <Container>
+                <nav class="flex items-center justify-between flex-grow gap-3 md:gap-0">
+                    <!---- <NavLogo />
           <NavSearch />
           <NavUserMenu /> --->
-          
-          <header>
-        <div class="container">
-            <div class="logo">
-                <img src="/logo.png" alt="Logo">
-            </div>  
 
-            <nav>
-                <ul>
-                    <li><a href="#">Domů</a></li>
-                    <li><a href="#">Přehled nabídky</a></li>
-                    <li><a href="#">O nás</a></li>
-                </ul>
-            </nav>
-            <div class="lang-buttons">
-                <button>CZ</button>
-                <button>EN</button>
-            </div>
-            <div class="auth-buttons">
-                <button>Register</button>
-                <button>Sign in</button>
-            </div>
+                    <header>
+                        <div class="container">
+                            <div class="logo">
+                                <img src="/logo.png" alt="Logo">
+                            </div>
+                            <div class="left-section">
+                                <div class="nav-items">
+                                    <a  style="font-weight: 700;" href="#">Domů</a>
+                                    <a style="font-weight: 700;" href="#">Přehled nabídky</a>
+                                    <a style="font-weight: 700;" href="#">O nás</a>
+                                </div>
+                            </div>
+                            <div class="right-section">
+                                <div class="lang-buttons">
+                                    <button class="lang-button active" data-lang="cz">CZ</button>
+                                    <button class="lang-button" data-lang="en">EN</button>
+                                </div>
+                                <div class="auth-buttons">
+                                    <button>Register</button>
+                                    <button>Sign in</button>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+
+                </nav>
+            </Container>
         </div>
-    </header>
-
-        </nav>
-      </Container>
-    </div>
-    <Categories />
-  </section>
+        <Categories />
+    </section>
 </template>
 
-<style scoped>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
 
+<style scoped>
 header {
     height: 60px; /* Adjust height as needed */
     background-color: #fff; /* Adjust background color */
@@ -67,25 +64,30 @@ header {
     height: auto;
 }
 
-nav ul {
+.left-section {
+    margin-left: 50px; /* Adjust margin as needed */
+}
+
+.nav-items {
     display: flex;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin: 50px;
+    padding: 50px;
 }
 
-nav li {
-    margin-right: 50px;
-}
-
-nav a {
+.nav-items a {
     text-decoration: none;
     color: #333; /* Adjust color as needed */
+    margin-right: 20px;
+}
+
+.right-section {
+    margin-right: 20px; /* Adjust margin as needed */
 }
 
 .lang-buttons, .auth-buttons {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .lang-buttons button, .auth-buttons button {
@@ -94,5 +96,10 @@ nav a {
     color: #333; /* Adjust color as needed */
     cursor: pointer;
     margin-left: 10px;
+    padding: 5px 10px;
+}
+
+.lang-button.active {
+    background-color: #f0f0f0; /* Adjust background color as needed */
 }
 </style>

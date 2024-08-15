@@ -33,7 +33,7 @@ onBeforeUnmount(() => {
       <NuxtLink
         to="/create-listing"
         class="hidden px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer lg:inline-block hover:bg-neutral-100">
-        Host with Staystrella
+        Host with Mega Chalupy
       </NuxtLink>
 
       <div class="relative inline-block text-left shrink-0 menu-dropdown">
