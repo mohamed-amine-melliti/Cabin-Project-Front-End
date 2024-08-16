@@ -45,7 +45,7 @@
 
                             <label for="travelers" class="sr-only">Number of travelers</label>
 
-                            <input type="number" id="travelers" value="2" min="1"
+                            <input id="travelers" value="2" min="1"
                                 class="self-stretch my-auto bg-transparent border-none outline-none" />
 
                             <span class="self-stretch my-auto">travelers</span>
@@ -94,12 +94,14 @@ export default defineComponent({
 
 <style scoped>
 .mt-0 {
-  margin-top: 150px;
+    margin-top: 150px;
 }
+
 .mt-3 {
-  margin-top: 1.75rem;
+    margin-top: 1.75rem;
 }
+
 .w-\[479px\] {
-  width: 800px;
+    width: 800px;
 }
 </style>
