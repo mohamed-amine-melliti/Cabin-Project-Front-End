@@ -11,13 +11,21 @@
                                 alt="Company Logo" class="object-contain w-8 aspect-square" />
                         </a>
                     </div>
-                    <div
+                    <div 
                         class="flex flex-wrap flex-1 shrink gap-10 items-center self-stretch pl-12 my-auto text-sm font-semibold leading-none text-black basis-0 min-w-[240px] max-md:max-w-full">
                         <a href="#" class="self-stretch my-auto">Domů</a>
-                        <a href="#" @click.prevent="toggleNavSearch" class="self-stretch my-auto">Přehled nabídky</a>
+
+                        <button @click="openModal" type="button" 
+                            className="rounded-md bg-black/20 px-4 py-2 text-sm font-medium text-white hover:bg-black/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/75">
+                            Open dialog
+                        </button>
+
+                        <a href="#" @click="openModal" class="self-stretch my-auto">Přehled nabídky</a>
 
                         <!-- Conditionally render the NavSearch component -->
-                        <NavSearch v-if="showNavSearch" />
+                        <Dialog appear show={isOpen} >
+                            
+                        </Dialog>
 
                         <a href="#" class="self-stretch my-auto">O nás</a>
                     </div>
@@ -62,20 +70,25 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { TransitionRoot, TransitionChild, Dialog, DialogPanel } from '@headlessui/vue'
+const isOpen = ref(false)
+
+function closeModal() {
+    isOpen.value = false
+}
+function openModal() {
+    isOpen.value = true
+}
 
 
 export default defineComponent({
     name: 'Navbar',
     data() {
-    return {
-      showNavSearch: false, // Track whether NavSearch is displayed
-    };
-  },
-    methods: {
-    toggleNavSearch() {
-      this.showNavSearch = !this.showNavSearch; // Toggle the display of NavSearch
+        return {
+            showNavSearch: false, // Track whether NavSearch is displayed
+        };
     },
-  }
+
 });
 
 
