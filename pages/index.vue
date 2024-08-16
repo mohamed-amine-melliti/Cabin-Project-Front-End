@@ -31,6 +31,8 @@ if (import.meta.client) {
 <template>
   <section>
     <Container>
+
+      <ChalupSearch></ChalupSearch>
       <IsEmpty
         v-if="!isLoading && allListings?.length === 0"
         :showReset="true" />
