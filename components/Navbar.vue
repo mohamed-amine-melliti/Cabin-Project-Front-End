@@ -14,7 +14,11 @@
                     <div
                         class="flex flex-wrap flex-1 shrink gap-10 items-center self-stretch pl-12 my-auto text-sm font-semibold leading-none text-black basis-0 min-w-[240px] max-md:max-w-full">
                         <a href="#" class="self-stretch my-auto">Domů</a>
-                        <a href="#" class="self-stretch my-auto">Přehled nabídky</a>
+                        <a href="#" @click.prevent="toggleNavSearch" class="self-stretch my-auto">Přehled nabídky</a>
+
+                        <!-- Conditionally render the NavSearch component -->
+                        <NavSearch v-if="showNavSearch" />
+
                         <a href="#" class="self-stretch my-auto">O nás</a>
                     </div>
                     <div
@@ -42,10 +46,9 @@
 
 
                         <div class="flex gap-4 justify-center items-center self-stretch my-auto">
-                            <MenuItem label="Sign Up" 
-                                href="/register" />
+                            <MenuItem label="Sign Up" href="/register" />
                             <div class="flex shrink-0 self-stretch my-auto w-px bg-zinc-300 h-[22px]"></div>
-                            <MenuItem label="Login"  href="/login" />
+                            <MenuItem label="Login" href="/login" />
                         </div>
                     </div>
                 </div>
@@ -60,9 +63,22 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+
 export default defineComponent({
     name: 'Navbar',
+    data() {
+    return {
+      showNavSearch: false, // Track whether NavSearch is displayed
+    };
+  },
+    methods: {
+    toggleNavSearch() {
+      this.showNavSearch = !this.showNavSearch; // Toggle the display of NavSearch
+    },
+  }
 });
+
+
 </script>
 
 <style scoped>

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { STEPS } from '~/composables/useCreateListing'
-import { categories } from '~/data/constants'
+import { categories, things } from '~/data/constants'
 
 const {
   listingValues,
@@ -27,11 +27,21 @@ useSeoMeta({
 
     <!----------------------------------------------------------->
     <div class="flex flex-col gap-8" v-if="steps === STEPS.CATEGORY">
-      <Heading title="Which of these best describes your place?" subTitle="Pick a category" />
+      <Heading title="What type of place will your guests have ?" subTitle="Pick a category" />
       <div class="grid grid-cols-1 gap-3 overflow-y-auto md:grid-cols-2 lg:grid-cols-3">
         <CategoryInput v-for="category in categories" :key="category.label"
           :selected="listingValues.category === category.label" @categorySelect="categorySelected"
           :label="category.label" :icon="category.icon" />
+      </div>
+      <Button style="background-color: blue;" label="Next" :disabled="!listingValues.category" @click="onNext" />
+    </div>
+    <!----------------------------------------------------------->
+    <div class="flex flex-col gap-8" v-if="steps === STEPS.THINGS">
+      <Heading title="Tell the guest What you have in the place ?" subTitle="Please choose what amenities you have ?" />
+      <div class="grid grid-cols-1 gap-3 overflow-y-auto md:grid-cols-2 lg:grid-cols-3">
+        <CategoryInput v-for="thing in things" :key="thing.label"
+          :selected="listingValues.category === thing.label" @categorySelect="categorySelected"
+          :label="thing.label" :icon="thing.icon" />
       </div>
       <Button style="background-color: blue;" label="Next" :disabled="!listingValues.category" @click="onNext" />
     </div>
@@ -102,5 +112,8 @@ useSeoMeta({
       </div>
     </div>
     <!----------------------------------------------------------->
+
   </section>
+  <NavigationForm></NavigationForm>
+
 </template>

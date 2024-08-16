@@ -108,3 +108,38 @@ export const categories = [
     description: 'This property is luxurious!',
   },
 ]
+
+
+
+
+export const things = [
+  {
+    label: 'Kitchen Equipment ',
+    icon: 'fa6-solid:umbrella-beach',
+  },
+  {
+    label: 'Washing machine ',
+    icon: 'fa6-solid:umbrella-beach',
+  }, {
+    label: 'Outdoor table  ',
+    icon: 'fa6-solid:umbrella-beach',
+  }, {
+    label: 'Garage ',
+    icon: 'fa6-solid:umbrella-beach',
+  }, {
+    label: 'Bonfire  ',
+    icon: 'fa6-solid:umbrella-beach',
+  }, {
+    label: 'Swimming pool ',
+    icon: 'fa6-solid:umbrella-beach',
+  }, {
+    label: 'Fire Place ',
+    icon: 'fa6-solid:umbrella-beach',
+  }, {
+    label: 'TV',
+    icon: 'fa6-solid:umbrella-beach',
+  }, {
+    label: 'Air ',
+    icon: 'fa6-solid:umbrella-beach',
+  },
+]
