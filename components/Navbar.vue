@@ -52,7 +52,7 @@
 
 
 
-                        <div class="flex gap-4 justify-center items-center self-stretch my-auto">
+                        <div v-if="!user" class="flex gap-4 justify-center items-center self-stretch my-auto">
                             <MenuItem label="Sign Up" href="/register" />
                             <div class="flex shrink-0 self-stretch my-auto w-px bg-zinc-300 h-[22px]"></div>
                             <MenuItem label="Login" href="/login" />
@@ -91,6 +91,31 @@ export default defineComponent({
 });
 
 
+import { routes } from '~/data/constants'
+
+
+const user = useUser()
+
+function logout() {
+  $fetch('/api/v1/auth/logout', { method: 'POST' })
+    .then(() => reloadNuxtApp())
+    .catch(error => console.error(error))
+}
+
+function handleClickOutside(event: Event) {
+  const menu = document.querySelector('.menu-dropdown')
+  if (menu && !menu.contains(event.target as Node)) {
+    isOpen.value = false
+  }
+}
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
 </script>
 
 <style scoped>
