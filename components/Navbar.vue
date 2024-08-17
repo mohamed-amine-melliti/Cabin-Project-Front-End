@@ -51,13 +51,13 @@
                         </div>
 
 
-                        <UserMenu></UserMenu>
+                        <NavUserMenu />
 
                      <!---  <div v-if="!user" class="flex gap-4 justify-center items-center self-stretch my-auto">
                             <MenuItem label="Sign Up" href="/register" />
                             <div class="flex shrink-0 self-stretch my-auto w-px bg-zinc-300 h-[22px]"></div>
                             <MenuItem label="Login" href="/login" />
-                        </div>
+                            </div>
                         --> 
                     </div>
                 </div>
