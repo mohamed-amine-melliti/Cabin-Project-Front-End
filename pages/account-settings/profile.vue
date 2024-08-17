@@ -96,6 +96,8 @@ function handlePublicId(publicId: string) {
             class="w-full md:max-w-40"
             label="Save"
             type="submit"
+            style="background-color: blue;"
+
             outline />
         </form>
       </section>

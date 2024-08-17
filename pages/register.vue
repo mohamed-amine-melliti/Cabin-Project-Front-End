@@ -113,7 +113,8 @@ useSeoMeta({
 
         <Button
           type="submit"
-          label="Register">
+          label="Register"
+          style="background-color: blue;">
         </Button>
       </form>
     </div>

@@ -88,6 +88,7 @@ useSeoMeta({
         >
         <Button
           type="submit"
+           style="background-color: blue;"
           label="Log in ">
         </Button>
       </form>

@@ -60,6 +60,7 @@ async function passwordReset() {
           label="Email password reset link"
           type="submit"
           class="mt-4"
+           style="background-color: blue;"
           :disabled="isLoading" />
       </form>
     </EditFormContainer>

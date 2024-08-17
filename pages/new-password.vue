@@ -89,6 +89,7 @@ async function newPassword() {
           label="Create new password"
           type="submit"
           class="mt-4"
+           style="background-color: blue;"
           :disabled="isLoading" />
       </form>
     </EditFormContainer>
