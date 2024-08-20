@@ -21,7 +21,7 @@
     "@popperjs/core": "^2.11.8",
     "@vueuse/router": "^10.11.0",
     "arctic": "^1.9.1",
-    "cloudinary": "^2.2.0",
+    "cloudinary": "^2.4.0",
     "date-fns": "^3.6.0",
     "drizzle-orm": "^0.30.10",
     "lucia": "^3.2.0",

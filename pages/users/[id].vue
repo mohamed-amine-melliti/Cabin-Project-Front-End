@@ -54,6 +54,7 @@ useSeoMeta({
           ><Button
             label="Edit"
             class="mt-2"
+            style="background-color: blue;"
         /></NuxtLink>
       </div>
       <div class="flex-grow p-6 md:p-10">

@@ -46,6 +46,18 @@ useSeoMeta({
       <Button style="background-color: blue;" label="Next" :disabled="!listingValues.category" @click="onNext" />
     </div>
     <!----------------------------------------------------------->
+
+    <div class="flex flex-col gap-8" v-if="steps === STEPS.IMAGES">
+      <Heading title="Add a photo of your place" subTitle="What you have in the place ?" />
+      <ClientOnly>
+        <ImageUpload v-model="listingValues.imageSrc" @imagePublicId="imagePublicId" />
+      </ClientOnly>
+      <div class="flex flex-col gap-4 md:flex-row">
+        <Button label="Back" outline @click="onBack" />
+        <Button label="Next" :disabled="!listingValues.imageSrc" @click="onNext"            style="background-color: blue;"        />
+      </div>
+    </div>
+    <!----------------------------------------------------------->
     <div class="flex flex-col gap-8" v-if="steps === STEPS.LOCATION">
       <Heading title="Where is your place located?" subTitle="Help guests find you!" />
       <ClientOnly>
@@ -70,10 +82,13 @@ useSeoMeta({
         @add="add" @reduce="reduce" />
       <div class="flex flex-col gap-4 md:flex-row">
         <Button label="Back" outline @click="onBack" />
-        <Button :disabled="!listingValues.guestCount ||
+        <Button
+          style="background-color: blue;"
+          :disabled="!listingValues.guestCount ||
           !listingValues.roomCount ||
           !listingValues.bathroomCount
-          " label="Next" @click="onNext" />
+          " label="Next" @click="onNext"
+           />
       </div>
     </div>
     <!----------------------------------------------------------->
@@ -84,7 +99,9 @@ useSeoMeta({
       </ClientOnly>
       <div class="flex flex-col gap-4 md:flex-row">
         <Button label="Back" outline @click="onBack" />
-        <Button label="Next" :disabled="!listingValues.imageSrc" @click="onNext" />
+        <Button label="Next" :disabled="!listingValues.imageSrc" @click="onNext"
+        style="background-color: blue;"
+        />
       </div>
     </div>
     <!----------------------------------------------------------->
