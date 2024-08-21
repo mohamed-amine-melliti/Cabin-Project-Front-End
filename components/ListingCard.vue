@@ -47,7 +47,7 @@ function favorited(id: string) {
         <NuxtImg
           provider="cloudinary"
           sizes="100vw sm:80vw md:350px"
-          :src="listing.imageSrc"
+          :src='listing.imageSrc'
           :alt="`Image of ${listing.title}`"
           format="webp"
           class="object-cover w-full h-full transition group-hover:scale-110" />

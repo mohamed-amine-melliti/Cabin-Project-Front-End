@@ -23,7 +23,7 @@ if (import.meta.client) {
   widget = window.cloudinary.createUploadWidget(
     {
       cloud_name: config.cloudinaryName,
-      upload_preset: config.cloudinaryFolder,
+      upload_preset: "mega_chalupy",
       multiple: false,
       maxFiles: 1,
       clientAllowedFormats: ['png', 'jpg', 'jpeg', 'webp'],
