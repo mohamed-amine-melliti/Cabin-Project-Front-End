@@ -49,5 +49,7 @@ if (import.meta.client) {
         :cards="12"
         v-if="isLoading" />
     </Container>
+
+    <RegistrationBanner></RegistrationBanner>
   </section>
 </template>
