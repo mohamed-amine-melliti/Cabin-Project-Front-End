@@ -41,8 +41,10 @@ useSeoMeta({
           :icon="category.icon" />
       </div>
       <Button
+        style="background-color: blue"
         label="Next"
         :disabled="!listingValues.category"
+        
         @click="onNext" />
     </div>
     <div
@@ -65,7 +67,9 @@ useSeoMeta({
         <Button
           :disabled="!listingValues.locationValue"
           label="Next"
-          @click="onNext" />
+          @click="onNext" 
+          style="background-color: blue"
+          />
       </div>
     </div>
     <div
@@ -105,6 +109,7 @@ useSeoMeta({
             !listingValues.roomCount ||
             !listingValues.bathroomCount
           "
+          style="background-color: blue"
           label="Next"
           @click="onNext" />
       </div>
@@ -127,6 +132,7 @@ useSeoMeta({
           outline
           @click="onBack" />
         <Button
+          style="background-color: blue"
           label="Next"
           :disabled="!listingValues.imageSrc"
           @click="onNext" />
@@ -159,6 +165,7 @@ useSeoMeta({
           outline
           @click="onBack" />
         <Button
+            style="background-color: blue;"
           :disabled="!listingValues.description || listingValues.description.length > 400"
           label="Next"
           @click="onNext" />
@@ -187,7 +194,9 @@ useSeoMeta({
         <Button
           :disabled="!listingValues.price"
           label="Create"
-          @click="createListing" />
+          @click="createListing" 
+          style="background-color: blue"
+          />
       </div>
     </div>
   </section>
