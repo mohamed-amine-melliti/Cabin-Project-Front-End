@@ -4,9 +4,9 @@ import type { CountrySelectValue } from '~/types'
 export enum STEPS {
   CATEGORY = 0,
   THINGS=1,
-  LOCATION = 2,
+  IMAGES = 2,
   INFO = 3,
-  IMAGES = 4,
+  LOCATION= 4,
   DESCRIPTION = 5,
   PRICE = 6,
   PUBLISH=7

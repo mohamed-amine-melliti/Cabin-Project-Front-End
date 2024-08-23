@@ -87,7 +87,6 @@ useSeoMeta({
       </div>
     </div>
 
-    <DragAndDrop></DragAndDrop>
     <!-----------------------------------------------------------
     <div class="flex flex-col gap-8" v-if="steps === STEPS.IMAGES">
       <Heading title="Add a photo of your place" subTitle="Show guests what your place looks like?" />
@@ -123,70 +122,56 @@ useSeoMeta({
         :error="errors.price" formatPrice required />
       <div class="flex flex-col gap-4 md:flex-row">
         <Button label="Back" outline @click="onBack" />
-        <Button :disabled="!listingValues.price" label="Create" @click="createListing"
-          style="background-color: blue;" />
+        <Button style="background-color: blue;"
+          :disabled="!listingValues.description || listingValues.description.length > 400" label="Next"
+          @click="onNext" />
       </div>
     </div>
     <!----------------------------------------------------------->
-    <section class="flex flex-col px-72 pt-9 max-md:px-5">
+    <div class="flex flex-col gap-8" v-if="steps === STEPS.PUBLISH">
 
-      <div class="flex flex-wrap gap-10 justify-between items-center w-full max-md:max-w-full">
+      <section class="flex flex-wrap gap-10 justify-between items-center w-full max-md:max-w-full">
+        <div class="flex flex-wrap gap-10 justify-between items-center w-full max-md:max-w-full">
 
-        <article class="flex flex-col self-stretch my-auto min-w-[240px] w-[342px]">
+          <article class="flex flex-col self-stretch my-auto min-w-[240px] w-[342px]">
 
-          <header class="flex flex-col w-full">
+            <header class="flex flex-col w-full">
 
-            <h2 class="text-sm font-bold leading-none text-neutral-500">Step 3</h2>
+              <h2 class="text-sm font-bold leading-none text-neutral-500">Step 3</h2>
 
-            <h1 class="mt-4 text-4xl font-semibold leading-[50px] text-slate-800">
+              <h1 class="mt-4 text-4xl font-semibold leading-[50px] text-slate-800">
 
-              Finish up and publish
+                Finish up and publish
 
-            </h1>
+              </h1>
 
-          </header>
+            </header>
 
-          <p class="mt-16 text-lg text-black max-md:mt-10">
+            <p class="mt-16 text-lg text-black max-md:mt-10">
 
-            Finally, you'll choose booking settings...
+              Finally, you'll choose booking settings...
 
-          </p>
+            </p>
 
-        </article>
+          </article>
 
-        <img loading="lazy"
-          src="https://cdn.builder.io/api/v1/image/assets/TEMP/cf928fccc10357725808b128cacc24911c83195602ef8a7f59c24b59bb7d23b0?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa"
-          alt="Illustration representing the finish and publish step"
-          class="object-contain self-stretch my-auto aspect-square min-w-[240px] w-[470px] max-md:max-w-full" />
+          <img loading="lazy"
+            src="https://cdn.builder.io/api/v1/image/assets/TEMP/cf928fccc10357725808b128cacc24911c83195602ef8a7f59c24b59bb7d23b0?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa"
+            alt="Illustration representing the finish and publish step"
+            class="object-contain self-stretch my-auto aspect-square min-w-[240px] w-[470px] max-md:max-w-full" />
 
-      </div>
+        </div>
 
-      <nav
-        class="flex flex-wrap gap-5 justify-center items-center mt-14 w-full text-xs whitespace-nowrap max-md:mt-10 max-md:max-w-full">
+       
 
-        <button
-          class="flex flex-1 shrink justify-center items-center self-stretch my-auto font-medium text-black basis-8 min-w-[240px] rounded-[187px_8px_8px_8px] max-md:max-w-full">
+      </section>
+      <div class="flex flex-col gap-4 md:flex-row">
+          <Button label="Back" outline @click="onBack" />
+          <Button :disabled="!listingValues.price" label="Create" @click="createListing"
+            style="background-color: blue;" />
 
-          <span
-            class="overflow-hidden flex-1 shrink gap-2.5 self-stretch px-4 py-3 my-auto w-full border border-black border-solid min-w-[240px] rounded-[408px_8px_8px_408px] max-md:max-w-full">
-
-            Back
-
-          </span>
-
-        </button>
-
-        <button
-          class="flex-1 shrink gap-2.5 self-stretch px-4 py-3 my-auto font-semibold text-white bg-blue-600 rounded-lg min-w-[240px] max-md:max-w-full">
-
-          Next
-
-        </button>
-
-      </nav>
-
-    </section>
-    
+        </div>
+    </div>
     <!----------------------------------------------------------->
 
   </section>
