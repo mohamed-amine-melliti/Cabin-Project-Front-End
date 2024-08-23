@@ -11,7 +11,7 @@ useSeoMeta({
     'Discover your ultimate vacation rental experience with Mega Chalupy. Find stunning accommodations, seamless user experiences, and high-quality, performance-driven solutions for your next getaway.',
   keywords:
     'vacation rental, accommodation, travel, holiday, getaway, rental property, rental home',
-  author: 'Aleksandar Atanasovski',
+  author: 'Mohamed Amine Melliti',
   ogType: 'website',
   ogSiteName: 'Mega Chalupy',
   ogUrl: 'https://www.Mega Chalupy.atalek.com/',

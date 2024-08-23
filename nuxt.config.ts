@@ -99,8 +99,7 @@ export default defineNuxtConfig({
 
   image: {
     cloudinary: {
-      baseURL: process.env.CLOUDINARY_PATH,
-    },
+      baseURL: 'https://res.cloudinary.com/dqlouq2wc/image/upload/main'    },
   },
 
   compatibilityDate: '2024-08-13',
