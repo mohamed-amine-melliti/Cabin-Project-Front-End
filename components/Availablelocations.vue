@@ -1,18 +1,25 @@
 <template>
-    <section class="flex flex-wrap gap-4 items-center py-4 w-full font-semibold max-md:max-w-full">
-     <!----   <article v-for="(item, index) in galleryItems" :key="index"
-            class="flex overflow-hidden flex-col flex-1 shrink self-stretch my-auto whitespace-nowrap rounded-xl border border-solid basis-0 border-black border-opacity-10 min-w-[240px]">
-            <img v-if="item.imageSrc" :src="item.imageSrc" :alt="item.imageAlt" loading="lazy"
-                class="object-contain max-w-full aspect-[1.76] w-[390px]" />
-            <div class="flex gap-10 justify-between items-center px-4 py-2.5 w-full bg-white">
-                <p class="self-stretch my-auto text-xs leading-loose">{{ item.title }}</p>
-                <span class="self-stretch my-auto text-xl leading-none">{{ item.flag }}</span>
-            </div>
-        </article>---->
+<section class="flex flex-wrap justify-center gap-4 py-4 w-full font-semibold">
+  <article
+      @click="handleClick"
+    v-for="(item, index) in galleryItems"
+    :key="index"
+    class="flex flex-col overflow-hidden rounded-xl border border-solid border-black border-opacity-10 min-w-[220px] max-w-[220px] bg-white shadow-lg"
+  >
+    <img
+      v-if="item.imageSrc"
+      :src="item.imageSrc"
+      :alt="item.imageAlt"
+      loading="lazy"
+      class="object-cover w-full h-[150px] bg-gray-200"
+    />
+    <div class="flex flex-col px-4 py-2">
+      <p class="text-sm font-semibold text-gray-800">{{ item.title }}</p>
+      <span class="text-lg text-gray-600">{{ item.flag }}</span>
+    </div>
+  </article>
+</section>
 
-
-        
-    </section>
 </template>
 
 <script lang="ts">
@@ -54,6 +61,8 @@ export default defineComponent({
 
                 }, {
 
+                    imageSrc: 'https://cdn.builder.io/api/v1/image/assets/TEMP/1a186527c931bec1b692ad6c8205aba4b1277225b97967d1b4d6693160888c91?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa',
+
                     imageAlt: 'Representation of Praha',
 
                     title: 'Praha',
@@ -92,5 +101,25 @@ export default defineComponent({
     }
 
 });
+
+
+type CardProps = {
+  title: string
+  flag: string
+  category: string
+  selectedCategory?: string
+}
+
+const props = defineProps<CardProps>()
+const emit = defineEmits<{
+  (event: 'filter', category: string): void
+}>()
+
+const route = useRoute()
+const router = useRouter()
+
+function handleClick() {
+  emit('filter', props.category)
+}
 
 </script>

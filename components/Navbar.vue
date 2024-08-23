@@ -2,7 +2,7 @@
 <section class="z-10 w-full bg-white shadow-sm">
     <Container>
         <nav class="flex flex-col w-full">
-            <div class="flex flex-wrap justify-between items-center px-6 py-4 w-full bg-white border-b border-black border-opacity-40 shadow-[0px_1px_1px_rgba(0,0,0,0.13)]">
+            <div class="flex flex-wrap justify-between items-center px-6 py-4 w-full bg-white  border-opacity-40 shadow-[0px_1px_1px_rgba(0,0,0,0.13)]">
                 <!-- Logo -->
                 <div class="flex items-center py-2 w-8 md:w-10 lg:w-12">
                     <a href="/">
