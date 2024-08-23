@@ -103,23 +103,5 @@ export default defineComponent({
 });
 
 
-type CardProps = {
-  title: string
-  flag: string
-  category: string
-  selectedCategory?: string
-}
-
-const props = defineProps<CardProps>()
-const emit = defineEmits<{
-  (event: 'filter', category: string): void
-}>()
-
-const route = useRoute()
-const router = useRouter()
-
-function handleClick() {
-  emit('filter', props.category)
-}
 
 </script>

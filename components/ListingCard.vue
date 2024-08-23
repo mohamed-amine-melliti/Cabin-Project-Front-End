@@ -42,45 +42,52 @@ function favorited(id: string) {
   <NuxtLink
     class="col-span-1 group"
     :to="`/listings/${listing.id}`">
-    <div class="flex flex-col w-full gap-2">
-      <div class="relative w-full overflow-hidden aspect-square rounded-xl">
+    <div class="flex flex-col w-full gap-3 bg-white rounded-lg shadow-lg overflow-hidden transition-transform duration-300 transform group-hover:scale-105">
+      <!-- Image Section -->
+      <div class="relative w-full overflow-hidden aspect-square">
         <NuxtImg
           provider="cloudinary"
           sizes="100vw sm:80vw md:350px"
-          :src='listing.imageSrc'
+          :src="listing.imageSrc"
           :alt="`Image of ${listing.title}`"
           format="webp"
-          class="object-cover w-full h-full transition group-hover:scale-110" />
+          class="object-cover w-full h-full transition-transform duration-300 transform group-hover:scale-110"
+        />
+        <!-- Heart Button -->
         <div
-          class="absolute top-3 right-3"
+          class="absolute top-3 right-3 z-10"
           @click="(e: MouseEvent) => e.preventDefault()">
           <HeartButton
             :listingId="listing.id"
             @click="(e: MouseEvent) => e.preventDefault()"
-            @favorited="favorited(listing.id)" />
+            @favorited="favorited(listing.id)"
+          />
         </div>
       </div>
-      <div class="text-lg font-semibold line-clamp-1">
-        {{ location?.flag }} {{ location?.label }}, {{ location?.region }}
-      </div>
-      <div class="font-light text-neutral-500">
-        {{ reservationDate || listing.category }}
-      </div>
-      <div class="flex flex-row items-center gap-1">
-        <div class="font-semibold">$ {{ totalPrice || price }}</div>
-        <div
-          v-if="!totalPrice && !reservation"
-          class="font-light">
-          per night
+      <!-- Content Section -->
+      <div class="p-4 flex flex-col gap-2">
+        <div class="text-lg font-semibold truncate">
+          {{ location?.flag }} {{ location?.label }}, {{ location?.region }}
         </div>
-      </div>
-      <div @click="e => e.preventDefault()">
-        <Button
-          @click="action(actionId!)"
-          small
-          v-if="actionLabel"
-          :disabled
-          :label="actionLabel" />
+        <div class="font-light text-neutral-500 truncate">
+          {{ reservationDate || listing.category }}
+        </div>
+        <div class="flex flex-row items-center gap-2">
+          <div class="font-semibold text-xl">$ {{ totalPrice || price }}</div>
+          <div v-if="!totalPrice && !reservation" class="font-light text-sm">
+            per night
+          </div>
+        </div>
+        <!-- Action Button -->
+        <div>
+          <Button
+            @click="action(actionId!)"
+            small
+            v-if="actionLabel"
+            :disabled="!actionLabel"
+            :label="actionLabel"
+          />
+        </div>
       </div>
     </div>
   </NuxtLink>
