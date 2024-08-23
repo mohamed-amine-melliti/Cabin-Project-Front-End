@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
 
+  //plugins: ['~/plugins/v.js'],
+
   modules: [
     '@nuxtjs/tailwindcss',
     'nuxt-icon',
@@ -73,9 +75,13 @@ export default defineNuxtConfig({
       },
       link: [
         { rel: 'icon', type: 'image/webp', href: '/logo.webp' },
-        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat' }
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat' },
+        { rel: 'stylesheet', href: 'https://unpkg.com/vuesax@4.0.1-alpha.16/dist/vuesax.min.css' }
+
       ],
-      script: [{ src: 'https://upload-widget.cloudinary.com/global/all.js' }],
+      script: [{ src: 'https://upload-widget.cloudinary.com/global/all.js' },
+//      { src: 'https://unpkg.com/vuesax@4.0.1-alpha.16/dist/vuesax.min.js' }
+      ],
     },
   },
 

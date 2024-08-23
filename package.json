@@ -22,6 +22,7 @@
     "@popperjs/core": "^2.11.8",
     "@vueuse/router": "^10.11.0",
     "arctic": "^1.9.1",
+    "chalk": "^4",
     "cloudinary": "^2.4.0",
     "date-fns": "^3.6.0",
     "drizzle-orm": "^0.30.10",
@@ -34,6 +35,7 @@
     "vue-flag-icon": "^2.1.0",
     "vue-router": "^4.3.3",
     "vue-toastification": "^2.0.0-rc.5",
+    "vuesax": "^4.0.1-alpha.25",
     "world-countries": "^5.0.0",
     "zod": "^3.23.8"
   },

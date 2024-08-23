@@ -3,11 +3,12 @@ import type { CountrySelectValue } from '~/types'
 
 export enum STEPS {
   CATEGORY = 0,
-  LOCATION = 1,
-  INFO = 2,
-  IMAGES = 3,
-  DESCRIPTION = 4,
-  PRICE = 5,
+  THINGS=1,
+  LOCATION = 2,
+  INFO = 3,
+  IMAGES = 4,
+  DESCRIPTION = 5,
+  PRICE = 6,
 }
 
 const toast = useToast()

@@ -33,23 +33,21 @@ if (import.meta.client) {
     <Container>
 
       <ChalupSearch></ChalupSearch>
-      <IsEmpty
-        v-if="!isLoading && allListings?.length === 0"
-        :showReset="true" />
-      <div
-        class="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
-        v-if="allListings && allListings.length > 0">
-        <ListingCard
-          v-for="listing in allListings"
-          :listing
-          :key="listing.id" />
+      <IsEmpty v-if="!isLoading && allListings?.length === 0" :showReset="true" />
+      <div class="max-w-6xl mx-auto px-8 max-md:px-5 max-md:max-w-full">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12" v-if="allListings && allListings.length > 0">
+          <ListingCard v-for="listing in allListings" :listing="listing" :key="listing.id" />
+        </div>
       </div>
+
       <Observer @intersect="fetchNextSet" />
-      <LoadingListingCards
-        :cards="12"
-        v-if="isLoading" />
+      <LoadingListingCards :cards="12" v-if="isLoading" />
     </Container>
 
+    <Availablelocations></Availablelocations>
     <RegistrationBanner></RegistrationBanner>
+
+    <MoreListings></MoreListings>
+    <InspirationSection></InspirationSection>
   </section>
 </template>

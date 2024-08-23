@@ -1,33 +1,25 @@
 <template>
 
-    <header class="flex flex-wrap justify-between items-center px-4 py-2.5 mt-14 w-full text-base leading-none text-white bg-black rounded-3xl max-md:mt-10 max-md:max-w-full">
+<header class="flex flex-wrap justify-between items-center px-8 py-2.5 mt-14 mx-auto w-full max-w-6xl text-base leading-none text-white bg-black rounded-3xl max-md:mt-10 max-md:max-w-full">
   
-      <div class="flex flex-wrap flex-1 shrink gap-6 items-center self-stretch my-auto basis-0 min-w-[240px] max-md:max-w-full">
+  <div class="flex flex-wrap flex-1 shrink gap-6 items-center my-auto min-w-[240px] max-md:max-w-full">
+    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/609de48249f6c87f700fb90996a663eb76c6130c1e22ff548824521797e78d3f?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa" alt="" class="object-contain shrink-0 my-auto aspect-square w-[54px]" />
   
-        <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/609de48249f6c87f700fb90996a663eb76c6130c1e22ff548824521797e78d3f?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa" alt="" class="object-contain shrink-0 self-stretch my-auto aspect-square w-[54px]" />
+    <p class="flex-1 shrink my-auto max-md:max-w-full">
+      Zaregistruj se<strong> ZDARMA získej premium umístění na 1 měsíc zdarma </strong>
+    </p>
+  </div>
   
-        <p class="flex-1 shrink self-stretch my-auto basis-0 max-md:max-w-full">
-  
-          Zaregistruj se<strong> ZDARMA získej premium umístění na 1 měsíc zdarma </strong>
-  
-        </p>
-  
-      </div>
-  
-      <nav class="flex gap-4 items-center self-stretch pr-1.5 my-auto text-center">
-  
-        <button class="gap-2.5 self-stretch p-2.5 my-auto whitespace-nowrap bg-blue-600 rounded-[44px]">
-  
-          registrovat
-  
-        </button>
-  
-        <a href="#" class="self-stretch my-auto">Jak to chodí ?</a>
-  
-      </nav>
-  
-    </header>
-  
+  <nav class="flex gap-4 items-center pr-1.5 my-auto text-center">
+    <button class="gap-2.5 p-2.5 my-auto whitespace-nowrap bg-blue-600 rounded-[44px]">
+      registrovat
+    </button>
+    <a href="#" class="my-auto">Jak to chodí ?</a>
+  </nav>
+
+</header>
+
+
   </template>
   
   
