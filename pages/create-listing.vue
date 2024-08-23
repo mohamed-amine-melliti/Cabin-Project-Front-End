@@ -21,22 +21,6 @@ useSeoMeta({
   title: 'Create Listing',
 })
 
-computed: {
-    currentStepLabel(): string {
-      const stepMapping: Record<string, string> = {
-        CATEGORY: 'type of place',
-        THINGS: 'things in place',
-        IMAGES: 'Photos of place',
-        DESCRIPTION: 'Place Description',
-        PRICE: 'Price setup',
-        PUBLISH: 'Finish up',
-        LOCATION: 'Business Location',
-        INFO: 'amenities',
-        // ... add other mappings as needed
-      };
-      return stepMapping[this.steps] || '';
-    }
-  }
 
 </script>
 

@@ -39,27 +39,27 @@ export default defineComponent({
 
             navigationItems: [
 
-                'type of place',
+                'type ',
 
-                'things in place',
+                'things ',
 
-                'Photos of place',
+                'Photos',
 
-                'Place Description',
+                'Description',
 
                 'Finish up',
 
                 'hosting',
 
-                'Business Location',
+                'Location',
 
-                'Business details',
+                'Details',
 
-                'renting type',
+                'Renting',
 
-                'Price setup',
+                'Price',
 
-                'Discounts Setup',
+                'Discounts',
 
                 'Rooms',
 
