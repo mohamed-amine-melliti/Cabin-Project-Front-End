@@ -36,6 +36,7 @@ function createReservation() {
     </div>
     <div class="p-4 mt-auto">
       <Button
+      style="background-color: blue"
         :disabled="disabled"
         label="Reserve"
         @click="createReservation" />
