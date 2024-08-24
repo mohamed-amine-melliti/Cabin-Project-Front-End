@@ -7,9 +7,10 @@ export enum STEPS {
   IMAGES = 2,
   INFO = 3,
   LOCATION= 4,
-  DESCRIPTION = 5,
-  PRICE = 6,
-  PUBLISH=7
+  TYPE= 5,
+  DESCRIPTION = 6,
+  PRICE = 7,
+  PUBLISH=8
 }
 
 const toast = useToast()

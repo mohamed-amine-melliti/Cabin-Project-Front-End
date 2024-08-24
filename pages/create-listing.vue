@@ -150,9 +150,7 @@ useSeoMeta({
             </header>
 
             <p class="mt-16 text-lg text-black max-md:mt-10">
-
               Finally, you'll choose booking settings...
-
             </p>
 
           </article>
@@ -160,7 +158,7 @@ useSeoMeta({
           <img loading="lazy"
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/cf928fccc10357725808b128cacc24911c83195602ef8a7f59c24b59bb7d23b0?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa"
             alt="Illustration representing the finish and publish step"
-            class="object-contain self-stretch my-auto aspect-square min-w-[240px] w-[470px] max-md:max-w-full" />
+            class="object-contain self-stretch my-auto aspect-square min-w-[240px] w-[70px] max-md:max-w-full" />
 
         </div>
 
