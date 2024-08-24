@@ -1,30 +1,37 @@
 <template>
-
-
     <section class="flex flex-wrap justify-center gap-4 py-4 w-full font-semibold">
-
-        <header class="flex flex-col w-full max-md:max-w-full">
-            <h1 class="text-3xl font-bold leading-normal max-md:max-w-full">
-                Dostupné lokality
-            </h1>
-
-            <p class="text-base max-md:max-w-full">
-                Nenechte si ujít novinky ze světa glampingu.
-            </p>
-        </header>
-
-        <article @click="handleClick" v-for="(item, index) in galleryItems" :key="index"
-            class="flex flex-col overflow-hidden rounded-xl border border-solid border-black border-opacity-10 min-w-[220px] max-w-[220px] bg-white shadow-lg">
-            <img v-if="item.imageSrc" :src="item.imageSrc" :alt="item.imageAlt" loading="lazy"
-                class="object-cover w-full h-[150px] bg-gray-200" />
-            <div class="flex flex-col px-4 py-2">
-                <p class="text-sm font-semibold text-gray-800">{{ item.title }}</p>
-                <span class="text-lg text-gray-600">{{ item.flag }}</span>
-            </div>
-        </article>
+  
+      <header class="flex flex-col w-full max-md:max-w-full mb-6">
+        <h2 class="text-3xl font-bold leading-normal max-md:max-w-full mb-2">
+          Dostupné lokality
+        </h2>
+        <p class="text-base max-md:max-w-full">
+          Nenechte si ujít novinky ze světa glampingu.
+        </p>
+      </header>
+  
+      <article
+        @click="handleClick"
+        v-for="(item, index) in galleryItems"
+        :key="index"
+        class="flex flex-col overflow-hidden rounded-xl border border-solid border-black border-opacity-10 min-w-[220px] max-w-[220px] bg-white shadow-lg"
+      >
+        <img
+          v-if="item.imageSrc"
+          :src="item.imageSrc"
+          :alt="item.imageAlt"
+          loading="lazy"
+          class="object-cover w-full h-[150px] bg-gray-200"
+        />
+        <div class="flex flex-col px-4 py-2">
+          <p class="text-sm font-semibold text-gray-800">{{ item.title }}</p>
+          <span class="text-lg text-gray-600">{{ item.flag }}</span>
+        </div>
+      </article>
+      
     </section>
-
-</template>
+  </template>
+  
 
 <script lang="ts">
 
