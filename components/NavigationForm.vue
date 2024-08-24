@@ -23,19 +23,19 @@
       return {
         navigationItems: [
           'Type',
-          'Things',
+          'Amenities',
           'Photos',
           'Description',
-          'Finish up',
           'Hosting',
           'Location',
           'Details',
-          'Renting type',
-          'Price setup',
-          'Discounts',
+          'Price',
+          //'Renting type',
+          //'Billing'
+          //'Discounts',
           'Rooms',
-          'Amenities',
-          'Billing'
+          'Finish up',
+
         ],
         selectedItem: '' // Track the currently selected item
       };

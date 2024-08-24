@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { STEPS } from '~/composables/useCreateListing'
-import { categories, things } from '~/data/constants'
+import { categories, things, buttons } from '~/data/constants'
+import { ref } from 'vue';
 
 
 
@@ -25,26 +26,11 @@ useSeoMeta({
 })
 
 
-import { ref } from 'vue';
+const selectedButton = ref<string | null>(null);
 
-const selectedCategory = ref<string | null>(null);
-
-function toggleSelection(category: string) {
-  selectedCategory.value = selectedCategory.value === category ? null : category;
+function toggleSelection(label: string) {
+  selectedButton.value = selectedButton.value === label ? null : label;
 }
-const categories = ref([
-  { label: 'Modern', imageSrc: 'path-to-modern-image' },
-  { label: 'Rustic', imageSrc: 'path-to-rustic-image' },
-  { label: 'In Nature', imageSrc: 'path-to-nature-image' },
-  { label: 'Memorable', imageSrc: 'path-to-memorable-image' },
-  { label: 'Historic', imageSrc: 'path-to-historic-image' },
-  { label: 'Romance', imageSrc: 'path-to-romance-image' }
-]);
-
-function selectCategory(category: string) {
-  selectedCategory.value = category;
-}
-
 
 </script>
 
@@ -68,7 +54,10 @@ function selectCategory(category: string) {
         <CategoryInput v-for="thing in things" :key="thing.label" :selected="listingValues.category === thing.label"
           @categorySelect="categorySelected" :label="thing.label" :icon="thing.icon" />
       </div>
-      <Button style="background-color: blue;" label="Next" :disabled="!listingValues.category" @click="onNext" />
+      <div class="flex flex-col gap-4 md:flex-row">
+        <Button label="Back" outline @click="onBack" />
+        <Button style="background-color: blue;" label="Next" :disabled="!listingValues.category" @click="onNext" />
+      </div>
     </div>
     <!----------------------------------------------------------->
     <div class="flex flex-col gap-8" v-if="steps === STEPS.IMAGES">
@@ -100,93 +89,15 @@ function selectCategory(category: string) {
       <section class="flex flex-col w-full max-md:max-w-full">
 
         <div class="flex flex-wrap gap-4 justify-center items-start w-full max-md:max-w-full">
-
-          <button
-            class="flex gap-2.5 justify-center items-center px-5 py-2.5 text-sm font-medium whitespace-nowrap border-2 border-black border-solid bg-neutral-100 rounded-[31px]">
-
-            <img loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/54337a77c1fdc045d0086739becc265d7301606ee7ddf9bd5ea69b9c29b212ff?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa"
-              alt="" class="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]" />
-
-            <span class="self-stretch my-auto">Modern</span>
-
+          <button v-for="button in buttons" :key="button.label" :class="[
+            'flex gap-2.5 justify-center items-center px-5 py-2.5 text-sm font-medium whitespace-nowrap border-2 border-black border-solid bg-neutral-100 rounded-[31px]',
+            selectedButton === button.label ? 'bg-blue-500 text-white' : ''
+          ]" @click="toggleSelection(button.label)">
+            <img :src="button.imgSrc" alt=""
+              class="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]" />
+            <span class="self-stretch my-auto">{{ button.label }}</span>
           </button>
-
-          <button
-            class="flex gap-2.5 justify-center items-center px-5 py-2.5 tracking-wide whitespace-nowrap bg-white border border-solid border-zinc-400 rounded-[31px]">
-
-            <img loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/084f5f689a85bef9b1da92a216661d6d4d5e38fb02770142c2205a6443d6eeda?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa"
-              alt="" class="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]" />
-
-            <span class="self-stretch my-auto">Rustic</span>
-
-          </button>
-
-          <button
-            class="flex gap-2.5 justify-center items-center px-5 py-2.5 tracking-wide bg-white border border-solid border-zinc-400 rounded-[31px]">
-            <img loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/83c9d9a14f31a889e1508dfcb205e009f4c16ee62461f6a4d6fbe2d2a7d2ff69?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa"
-              alt="" class="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]" />
-
-            <span class="self-stretch my-auto">In Nature</span>
-
-          </button>
-
-          <button
-            class="flex gap-2.5 justify-center items-center px-5 py-2.5 tracking-wide whitespace-nowrap bg-white border border-solid border-zinc-400 rounded-[31px]">
-
-            <img loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/4f48adb8c2ff69fc2f5a72a3b340b6914f927e2bfc7c54b0ca44a1022082762b?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa"
-              alt="" class="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]" />
-
-            <span class="self-stretch my-auto">Memorable</span>
-
-          </button>
-
         </div>
-
-        <div
-          class="flex flex-wrap gap-4 justify-center items-start mt-5 w-full tracking-wide whitespace-nowrap max-md:max-w-full">
-
-          <button
-            class="flex gap-2.5 justify-center items-center px-5 py-2.5 bg-white border border-solid border-zinc-400 rounded-[31px]">
-
-            <img loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/653f60f2970ba08bb706fd4b229efa95d7afca8e90ca1aa247e585f8650d530c?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa"
-              alt="" class="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]" />
-
-            <span class="self-stretch my-auto">Historic</span>
-
-          </button>
-
-          <button
-            class="flex gap-2.5 justify-center items-center px-5 py-2.5 bg-white border border-solid border-zinc-400 rounded-[31px]">
-
-            <img loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/f1f8dbb22941feeba0b173ffc781308fbd48df81647e937b6bc4ab2d76185a38?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa"
-              alt="" class="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]" />
-
-            <span class="self-stretch my-auto">Modern</span>
-
-          </button>
-
-          <button
-            class="flex gap-2.5 justify-center items-center px-5 py-2.5 bg-white border border-solid border-zinc-400 rounded-[31px]"
-            @click="toggleSelection('Romance')">
-
-            <img loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/TEMP/03c4e5dd969da45f52a9e8819250b937cb8b3a66b019f23d3e8f599c71324cfb?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa"
-              alt="" class="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]" />
-
-            <span class="self-stretch my-auto">Romance</span>
-
-          </button>
-
-        </div>
-
-
-
 
 
       </section>
@@ -215,21 +126,7 @@ function selectCategory(category: string) {
           " label="Next" @click="onNext" />
       </div>
     </div>
-
-    <!-----------------------------------------------------------
-    <div class="flex flex-col gap-8" v-if="steps === STEPS.IMAGES">
-      <Heading title="Add a photo of your place" subTitle="Show guests what your place looks like?" />
-      <ClientOnly>
-        <ImageUpload v-model="listingValues.imageSrc" @imagePublicId="imagePublicId" />
-      </ClientOnly>
-      <div class="flex flex-col gap-4 md:flex-row">
-        <Button label="Back" outline @click="onBack" />
-        <Button label="Next" :disabled="!listingValues.imageSrc" @click="onNext"
-        style="background-color: blue;"
-        />
-      </div>
-    </div>
-    --------------------------------------------------------->
+    <!----------------------------------------------------------->
     <div class="flex flex-col gap-8" v-if="steps === STEPS.DESCRIPTION">
       <Heading title="How would you describe your place?" subTitle="Short and sweet works best!" />
       <Input id="Title" label="Title" v-model="listingValues.title" :disabled="isLoading" :error="errors.title"
@@ -252,7 +149,7 @@ function selectCategory(category: string) {
       <div class="flex flex-col gap-4 md:flex-row">
         <Button label="Back" outline @click="onBack" />
         <Button style="background-color: blue;"
-          :disabled="!listingValues.description || listingValues.description.length > 400" label="Next"
+         :disabled="!listingValues.price" label="Next"
           @click="onNext" />
       </div>
     </div>
@@ -288,16 +185,13 @@ function selectCategory(category: string) {
             class="object-contain self-stretch my-auto aspect-square min-w-[240px] w-[70px] max-md:max-w-full" />
 
         </div>
-
-
-
       </section>
+
       <div class="flex flex-col gap-4 md:flex-row">
         <Button label="Back" outline @click="onBack" />
-        <Button :disabled="!listingValues.price" label="Create" @click="createListing"
-          style="background-color: blue;" />
-
+        <Button label="Create" @click="createListing" style="background-color: blue;" />
       </div>
+
     </div>
     <!----------------------------------------------------------->
 
