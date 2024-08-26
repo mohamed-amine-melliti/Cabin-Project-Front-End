@@ -30,11 +30,11 @@ onBeforeUnmount(() => {
 <template>
   <div class="block ml-auto">
     <div class="relative flex flex-row items-center justify-end gap-3">
-      <NuxtLink to="/create-listing"
+   <!----   <NuxtLink to="/create-listing"
         class="hidden px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer lg:inline-block hover:bg-neutral-100">
         Host with Mega-Chalupy
       </NuxtLink>
-
+---->
       <div class="relative inline-block text-left shrink-0 menu-dropdown">
         <div v-if="!!user">
           <button @click="isOpen = !isOpen" aria-label="mobile hamburger menu"

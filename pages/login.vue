@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useToast } from 'vue-toastification'
 import { LoginSchema } from '~/zod-schemas/auth-schemas'
+import crypto from 'crypto';
 
 const isLoading = ref(false)
 const errors = reactive<{ [key: string]: string }>({ email: '', password: '', err: '' })
