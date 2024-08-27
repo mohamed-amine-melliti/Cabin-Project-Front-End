@@ -14,27 +14,8 @@
         class="absolute top-full left-0 w-full mt-2 bg-white shadow-lg rounded-lg overflow-hidden z-10"
       >
         <div class="p-4">
-          <h2 class="text-lg font-bold mb-4">Destination</h2>
-          <div class="relative flex items-center mb-4">
-            <svg
-              class="absolute left-3 w-5 h-5 text-gray-400"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M8.293 16.293a1 1 0 011.414 0l5.586-5.586a1 1 0 00-1.414-1.414L10 14.586 7.414 12A1 1 0 106 13.414l3 3a1 1 0 010 1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
-            <input
-              type="text"
-              placeholder="Rechercher une destination"
-              class="pl-10 pr-4 py-2 w-full border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div class="flex gap-4">
+          <h2 class="text-lg font-bold mb-4">Rechercher par région</h2>
+          <div class="grid grid-cols-3 gap-4">
             <button
               @click="selectLocation('Je suis flexible')"
               class="flex flex-col items-center p-4 bg-white border rounded-lg hover:bg-gray-50"
@@ -68,6 +49,39 @@
               />
               <span>Turquie</span>
             </button>
+            <button
+              @click="selectLocation('Moyen-Orient')"
+              class="flex flex-col items-center p-4 bg-white border rounded-lg hover:bg-gray-50"
+            >
+              <img
+                class="w-16 h-16 mb-2"
+                src="https://a0.muscache.com/im/pictures/65020241-c5d8-4fa6-a5b5-c2e3dc9b6b45.jpg?im_w=320"
+                alt="moyen-orient"
+              />
+              <span>Moyen-Orient</span>
+            </button>
+            <button
+              @click="selectLocation('Italie')"
+              class="flex flex-col items-center p-4 bg-white border rounded-lg hover:bg-gray-50"
+            >
+              <img
+                class="w-16 h-16 mb-2"
+                src="https://a0.muscache.com/im/pictures/89c10f4d-2a87-4e38-9bda-d7b709ce71a0.jpg?im_w=320"
+                alt="italie"
+              />
+              <span>Italie</span>
+            </button>
+            <button
+              @click="selectLocation('Asie du Sud-Est')"
+              class="flex flex-col items-center p-4 bg-white border rounded-lg hover:bg-gray-50"
+            >
+              <img
+                class="w-16 h-16 mb-2"
+                src="https://a0.muscache.com/im/pictures/23482b82-04c1-4f44-b8ed-58d462ce416d.jpg?im_w=320"
+                alt="asie-du-sud-est"
+              />
+              <span>Asie du Sud-Est</span>
+            </button>
           </div>
         </div>
       </div>
@@ -76,7 +90,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { defineComponent, ref, onMounted, onUnmounted } from 'vue';
 
 export default defineComponent({
   name: 'DestinationSelect',
@@ -89,9 +103,23 @@ export default defineComponent({
 
     const selectLocation = (location: string) => {
       console.log(`Selected location: ${location}`);
-      // Optionally, you can set the destination input value here
       isAccordionOpen.value = false; // Close the accordion
     };
+
+    const closeAccordion = (event: Event) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest('.relative')) {
+        isAccordionOpen.value = false;
+      }
+    };
+
+    onMounted(() => {
+      window.addEventListener('click', closeAccordion);
+    });
+
+    onUnmounted(() => {
+      window.removeEventListener('click', closeAccordion);
+    });
 
     return {
       isAccordionOpen,
@@ -102,6 +130,7 @@ export default defineComponent({
 });
 </script>
 
+
 <style scoped>
 .fade-enter-active, .fade-leave-active {
   transition: opacity 0.5s;
@@ -109,36 +138,17 @@ export default defineComponent({
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
-.destination-search {
-  display: flex; /* Adjust display to flex for horizontal alignment */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
 }
 
-.destination-search button {
-  padding: 10px 20px; /* Reduce padding for smaller buttons */
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px; /* Add rounded corners */
+button {
+  transition: transform 0.2s ease-in-out;
 }
 
-.destination-search button:hover {
-  background-color: #e0e0e0; /* Adjust hover color */
-}
-
-.transition {
-  position: relative;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.transition-enter,
-.transition-leave-to {
-  opacity: 0;
-  transform: translateY(10px);
-}
-
-.transition-enter-active,
-.transition-leave-active {
-  opacity: 1;
-  transform: translateY(0);
+button:hover {
+  transform: scale(1.05);
 }
 </style>
