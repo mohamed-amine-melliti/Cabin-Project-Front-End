@@ -15,7 +15,7 @@
           </h1>
   
           <!-- Search Form -->
-          <form @submit.prevent="handleSearch" class="relative flex flex-col md:flex-row gap-4 items-center p-4 mt-5 w-full bg-white/90 rounded-full shadow-lg backdrop-blur-lg">
+          <form style="background-color: transparent" @submit.prevent="handleSearch" class="relative flex flex-col md:flex-row gap-4 items-center p-4 mt-5 w-full bg-white/90 rounded-full shadow-lg backdrop-blur-lg">
             <!-- Form Inputs Container -->
             <div class="flex flex-wrap gap-4 w-full">
               <!-- DestinationSelect Component -->
