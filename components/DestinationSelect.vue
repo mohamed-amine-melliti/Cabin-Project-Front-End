@@ -4,20 +4,33 @@
 
     <div class="flex flex-col mt-4 text-xs font-medium">
       <div class="flex gap-4 items-start">
-        <div v-for="(region, index) in regions.slice(0, 3)" :key="index" class="flex flex-col w-[124px]">
-          <img :src="region.imageSrc" :alt="region.name" class="object-contain max-w-full aspect-square w-[124px]" />
+        <button
+          v-for="(region, index) in regions.slice(0, 3)"
+          :key="index"
+          class="flex flex-col w-[124px] hover:bg-gray-200 hover:shadow-lg transition-all duration-300"
+        >
+          <img
+            :src="region.imageSrc"
+            :alt="region.name"
+            class="object-contain max-w-full aspect-square w-[124px]"
+          />
           <div class="mt-2">{{ region.name }}</div>
-        </div>
+        </button>
       </div>
 
       <div class="flex gap-4 items-start mt-12 max-md:mt-10">
-        <div v-for="(region, index) in regions.slice(3)" :key="index + 3">
-          <button
-            class="flex flex-col w-[124px] items-center bg-transparent border-none cursor-pointer transition-transform duration-200 hover:scale-105">
-            <img :src="region.imageSrc" :alt="region.name" class="object-contain max-w-full aspect-square w-[124px]" />
-            <div class="mt-2">{{ region.name }}</div>
-          </button>
-        </div>
+        <button
+          v-for="(region, index) in regions.slice(3)"
+          :key="index + 3"
+          class="flex flex-col w-[124px] hover:bg-gray-200 hover:shadow-lg transition-all duration-300"
+        >
+          <img
+            :src="region.imageSrc"
+            :alt="region.name"
+            class="object-contain max-w-full aspect-square w-[124px]"
+          />
+          <div class="mt-2">{{ region.name }}</div>
+        </button>
       </div>
     </div>
   </div>
@@ -36,7 +49,6 @@ export default defineComponent({
   setup() {
     const regionSearch = ref<HTMLElement | null>(null);
     const isComponentOpen = ref(true); // Track if the component is open
-
     const handleClickOutside = (event: MouseEvent) => {
       if (regionSearch.value && !regionSearch.value.contains(event.target as Node)) {
         isComponentOpen.value = false; // Close the component if clicked outside
@@ -70,3 +82,7 @@ export default defineComponent({
   }
 });
 </script>
+
+<style scoped>
+/* Additional custom styles if needed */
+</style>
