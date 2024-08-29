@@ -19,7 +19,7 @@
             <!-- Form Inputs Container -->
             <div class="flex flex-wrap gap-4 w-full">
               <!-- DestinationSelect Component -->
-              <div class="relative flex items-center p-3 bg-white rounded-full shadow-sm border border-gray-200 flex-1 min-w-[240px] lg:min-w-[250px]">
+              <div class="relative flex items-center p-3 bg-white rounded-full shadow-sm border border-gray-200 flex-1 min-w-[240px] lg:min-w-[250px]" >
                 <img loading="lazy"
                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/9e4ea68a008ae9dd183ee824e10715869e80b1eb05e7139f33595a2df3614bb8?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa"
                      alt="destination-icon" class="w-5 h-5 mr-2" />
@@ -35,8 +35,7 @@
               </div>
   
               <!-- Dates Input -->
-              <div class="relative flex items-center p-3 bg-white rounded-full shadow-sm border border-gray-200 flex-1 min-w-[240px] lg:min-w-[250px]"
-                   @click="toggleDateSelector">
+              <div class="relative flex items-center p-3 bg-white rounded-full shadow-sm border border-gray-200 flex-1 min-w-[240px] lg:min-w-[250px]" @click="toggleDateSelector">
                 <img loading="lazy"
                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/385186cd1e9b4d55a0a945e9beba365cb5e8c23ae2ff1582c154eef948783cbb?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa"
                      alt="dates-icon" class="w-5 h-5 mr-2" />
@@ -88,16 +87,26 @@
       const isAccordionOpen = ref(false);
       const isDateSelectorOpen = ref(false);
   
+      // Toggle the accordion and close the DateSelector when opening the accordion
       const toggleAccordion = () => {
         isAccordionOpen.value = !isAccordionOpen.value;
+        if (isAccordionOpen.value) {
+          isDateSelectorOpen.value = false; // Close DateSelector if DestinationSelect is opened
+        }
       };
   
+      // Toggle the DateSelector and close the accordion when opening DateSelector
       const toggleDateSelector = () => {
         isDateSelectorOpen.value = !isDateSelectorOpen.value;
+        if (isDateSelectorOpen.value) {
+          isAccordionOpen.value = false; // Close DestinationSelect if DateSelector is opened
+        }
       };
   
-      const closeAccordion = (event: Event) => {
+      // Close dropdowns when clicking outside
+      const closeDropdowns = (event: Event) => {
         const target = event.target as HTMLElement;
+        // Close both dropdowns if clicked outside
         if (!target.closest('.relative')) {
           isAccordionOpen.value = false;
           isDateSelectorOpen.value = false;
@@ -105,11 +114,11 @@
       };
   
       onMounted(() => {
-        window.addEventListener('click', closeAccordion);
+        window.addEventListener('click', closeDropdowns);
       });
   
       onUnmounted(() => {
-        window.removeEventListener('click', closeAccordion);
+        window.removeEventListener('click', closeDropdowns);
       });
   
       return {
