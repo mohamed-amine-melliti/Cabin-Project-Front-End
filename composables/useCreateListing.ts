@@ -13,6 +13,19 @@ export enum STEPS {
   PUBLISH=8
 }
 
+export const STEP_LABELS = {
+  [STEPS.CATEGORY]: 'Type',
+  [STEPS.THINGS]: 'Amenities',
+  [STEPS.IMAGES]: 'Photos',
+  [STEPS.LOCATION]: 'Location',
+  [STEPS.TYPE]: 'Hosting',
+  [STEPS.INFO]: 'Details',
+  [STEPS.DESCRIPTION]: 'Description',
+  [STEPS.PRICE]: 'Price',
+  [STEPS.PUBLISH]: 'Finish up',
+};
+
+
 const toast = useToast()
 const STORAGE_KEY = 'listingValues'
 const EXPIRATION_KEY = 'listingValuesExpiration'
