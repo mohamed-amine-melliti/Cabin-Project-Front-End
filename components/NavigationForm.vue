@@ -17,8 +17,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { STEPS } from '~/composables/useCreateListing';
+import { defineComponent, ref, watch } from 'vue';
 
 export default defineComponent({
   name: 'NavigationForm',
@@ -46,12 +45,15 @@ export default defineComponent({
       'Finish up',
     ];
 
-    const selectedItem = ref(props.currentStep); // Initialize with the current step
+    const selectedItem = ref(props.currentStep);
+
+    watch(() => props.currentStep, (newStep) => {
+      selectedItem.value = newStep;
+    });
 
     function handleNavigation(item: string) {
       selectedItem.value = item;
-      props.onStepChange(item); // Trigger the step change in the parent
-      console.log(`Navigating to: ${item}`);
+      props.onStepChange(item);
     }
 
     return {

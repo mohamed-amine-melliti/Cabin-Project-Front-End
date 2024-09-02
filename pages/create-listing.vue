@@ -5,7 +5,7 @@ import { ref } from 'vue';
 
 
 
- 
+
 const {
   listingValues,
   steps,
@@ -30,6 +30,29 @@ const selectedButton = ref<string | null>(null);
 
 function toggleSelection(label: string) {
   selectedButton.value = selectedButton.value === label ? null : label;
+
+
+
+  const currentStep = ref(STEPS.TYPE); // Default to the first step
+
+  const stepMap = {
+    'Type': STEPS.TYPE,
+    'Amenities': STEPS.THINGS,
+    'Photos': STEPS.IMAGES,
+    'Description': STEPS.DESCRIPTION,
+    'Hosting': STEPS.INFO,
+    'Location': STEPS.LOCATION,
+    'Details': STEPS.INFO,
+    'Price': STEPS.PRICE,
+    'Rooms': STEPS.INFO,
+    'Finish up': STEPS.PUBLISH
+  };
+
+  function handleStepChange(item: string) {
+    currentStep.value = stepMap[item];
+  }
+
+
 }
 
 </script>
@@ -91,7 +114,7 @@ function toggleSelection(label: string) {
         <div class="flex flex-wrap gap-4 justify-center items-start w-full max-md:max-w-full">
           <button v-for="button in buttons" :key="button.label" :class="[
             'flex gap-2.5 justify-center items-center px-5 py-2.5 text-sm font-medium whitespace-nowrap border-2 border-black border-solid bg-neutral-100 rounded-[31px]',
-            selectedButton === button.label ? 'bg-blue-500 text-white' : ''
+            selectedButton === button.label ? 'bg-black-500 text-white' : ''
           ]" @click="toggleSelection(button.label)">
             <img :src="button.imgSrc" alt=""
               class="object-contain shrink-0 self-stretch my-auto aspect-square w-[18px]" />
@@ -143,14 +166,12 @@ function toggleSelection(label: string) {
     </div>
     <!----------------------------------------------------------->
     <div class="flex flex-col gap-8" v-if="steps === STEPS.PRICE">
-      <Heading title="Now set your price" subTitle="How much do you charge per night?" />
+      <Heading title="Please set your price" subTitle="How much do you charge per night?" />
       <Input id="Price" label="Price" type="number" v-model="listingValues.price" :disabled="isLoading"
         :error="errors.price" formatPrice required />
       <div class="flex flex-col gap-4 md:flex-row">
         <Button label="Back" outline @click="onBack" />
-        <Button style="background-color: blue;"
-         :disabled="!listingValues.price" label="Next"
-          @click="onNext" />
+        <Button style="background-color: blue;" :disabled="!listingValues.price" label="Next" @click="onNext" />
       </div>
     </div>
     <!----------------------------------------------------------->
@@ -177,12 +198,14 @@ function toggleSelection(label: string) {
               Finally, you'll choose booking settings...
             </p>
 
+
+            <video loading="lazy" src="/finish.mp4" alt="Illustration representing the finish and publish step"
+              class="object-contain self-stretch my-auto aspect-square min-w-[240px] w-[70px] max-md:max-w-full"
+              autoplay muted loop>
+            </video>
           </article>
 
-          <img loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/cf928fccc10357725808b128cacc24911c83195602ef8a7f59c24b59bb7d23b0?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa"
-            alt="Illustration representing the finish and publish step"
-            class="object-contain self-stretch my-auto aspect-square min-w-[240px] w-[70px] max-md:max-w-full" />
+
 
         </div>
       </section>
@@ -197,7 +220,6 @@ function toggleSelection(label: string) {
 
   </section>
 
-  <NavigationForm :currentStepLabel="STEPS" />
-
+  <NavigationForm :currentStep="currentStep" :onStepChange="handleStepChange" />
 
 </template>
