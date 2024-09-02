@@ -39,7 +39,9 @@ function createReservation() {
       style="background-color: blue"
         :disabled="disabled"
         label="Reserve"
-        @click="createReservation" />
+        @click="createReservation"
+        />
+
     </div>
   </section>
 </template>

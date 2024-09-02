@@ -39,43 +39,35 @@ useSeoMeta({
   <section>
     <Container>
       <div v-if="myReservations.length > 0">
-        <Heading
-          title="Reservations"
-          subTitle="Bookings on your properties" />
+        <Heading title="Reservations" subTitle="Bookings on your properties" />
 
         <div
           class="grid grid-cols-1 gap-8 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
           v-if="!!myReservations">
-          <template
-            v-for="listing in myReservations"
-            :key="listing.id">
-            <ListingCard
-              v-for="reservation in listing.reservations"
-              :key="listing?.id"
-              :listing
-              :reservation
-              actionLabel="Cancel guest reservation"
-              :actionId="reservation.id"
+          <template v-for="listing in myReservations" :key="listing.id">
+       <!----    <ListingCard v-for="reservation in listing.reservations" :key="listing?.id" :listing :reservation
+              actionLabel="Cancel guest reservation" :actionId="reservation.id" @action="cancelReservation" /> --> 
+
+           
+              <ReservationListingCard v-for="reservation in listing.reservations" :key="reservation.id" :listing="listing"
+              :reservation="reservation" actionLabel="Cancel guest reservation" :actionId="reservation.id"
               @action="cancelReservation" />
+              
           </template>
         </div>
         <Observer @intersect="fetchNextSet" />
       </div>
 
-      <LoadingListingCards
-        heading
-        v-if="isLoading" />
 
-      <div
-        v-if="
-          (!isLoading && myReservations.length === 0) || (!isLoading && !myReservations)
-        ">
-        <IsEmpty
-          title="No reservations found"
-          subTitle="Looks like you have no reservations on your properties"
-          showReset
-          label="Go back home" />
+
+      <div v-if="
+        (!isLoading && myReservations.length === 0) || (!isLoading && !myReservations)
+      ">
+        <IsEmpty title="No reservations found" subTitle="Looks like you have no reservations on your properties"
+          showReset label="Go back home" />
       </div>
     </Container>
+
+
   </section>
 </template>

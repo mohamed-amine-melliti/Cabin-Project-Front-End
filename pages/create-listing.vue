@@ -166,13 +166,18 @@ function toggleSelection(label: string) {
     </div>
     <!----------------------------------------------------------->
     <div class="flex flex-col gap-8" v-if="steps === STEPS.PRICE">
-      <Heading title="Please set your price" subTitle="How much do you charge per night?" />
+
+       
+     <Heading title="Please set your price" subTitle="How much do you charge per night?" />
       <Input id="Price" label="Price" type="number" v-model="listingValues.price" :disabled="isLoading"
         :error="errors.price" formatPrice required />
       <div class="flex flex-col gap-4 md:flex-row">
         <Button label="Back" outline @click="onBack" />
         <Button style="background-color: blue;" :disabled="!listingValues.price" label="Next" @click="onNext" />
       </div>
+
+
+     
     </div>
     <!----------------------------------------------------------->
     <div class="flex flex-col gap-8" v-if="steps === STEPS.PUBLISH">
