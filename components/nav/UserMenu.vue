@@ -28,13 +28,13 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div  style="z-index: 999;" class="block ml-auto">
+  <div   class="block ml-auto">
     <div class="relative flex flex-row items-center justify-end gap-3">
    <!----   <NuxtLink to="/create-listing"
-        class="hidden px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer lg:inline-block hover:bg-neutral-100">
-        Host with Mega-Chalupy
-      </NuxtLink>
----->
+              class="hidden px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer lg:inline-block hover:bg-neutral-100">
+              Host with Mega-Chalupy
+           </NuxtLink>
+    ---->
       <div class="relative inline-block text-left shrink-0 menu-dropdown">
         <div v-if="!!user">
           <button @click="isOpen = !isOpen" aria-label="mobile hamburger menu"
@@ -62,9 +62,6 @@ onBeforeUnmount(() => {
           <div v-if="isOpen" @click="isOpen = false"
             class="absolute right-0 z-50 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black/5 focus:outline-none">
             <div class="px-1 py-1">
-
-
-
 
               <div v-if="!!user">
                 <div>

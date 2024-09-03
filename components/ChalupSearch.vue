@@ -1,11 +1,10 @@
 <template>
-    <section class="flex flex-col pb-28 max-md:pb-24">
+    <section   class="flex flex-col pb-28 max-md:pb-24">
       <header class="relative flex flex-col px-4 w-full min-h-[451px] max-md:max-w-full justify-center items-center">
         <!-- Background Image with Gradient Overlay -->
         <div class="absolute inset-0 w-full h-full rounded-lg overflow-hidden">
           <img loading="lazy" src="../public/chalupsearch.png" alt="background"
                class="object-cover w-full h-full rounded-lg" />
-          <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 rounded-lg"></div>
         </div>
   
         <!-- Centered Main Content -->

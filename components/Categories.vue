@@ -43,18 +43,20 @@ onUnmounted(() => {
 
 <template>
   <Container v-if="isMainPage">
-    <div
-      :class="{ 'sticky top-0 left-0 right-0 z-10': isSticky }"
-      class="menu bg-white scroll-snap-type-x-mandatory flex flex-row items-center justify-between overflow-x-auto gap-10 justify-center items-start px-12 pb-0.5 text-xs font-medium whitespace-nowrap backdrop-blur-[16.5px] bg-stone-50 bg-opacity-70 border-b-black border-b-opacity-10 border-x-black border-x-opacity-10 text-zinc-600 max-md:px-5 mt-8"
-    >
-      <CategoryBox
-        v-for="item in categories"
-        :key="item.label"
-        :label="item.label"
+    <div 
+    :class="{ 'sticky top-0 left-0 right-0 z-10': isSticky }"
+    class="menu flex flex-row items-center justify-between overflow-x-auto w-full px-12 pb-0.5 text-xs font-medium whitespace-nowrap backdrop-blur-lg bg-gradient-to-r from-white/60 via-white/40 to-white/60 border-b border-black border-opacity-10 rounded-lg text-zinc-600 max-md:px-5">
+    
+    <CategoryBox 
+        v-for="item in categories" 
+        :key="item.label" 
+        :label="item.label" 
         :selected="category === item.label"
-        :icon="item.icon"
-      />
-    </div>
+        :icon="item.icon" 
+        class="flex flex-col items-center text-center px-4 py-2 transition-colors duration-300 hover:text-black"
+    />
+</div>
+
   </Container>
 </template>
 
@@ -62,6 +64,8 @@ onUnmounted(() => {
 .sticky {
   position: sticky;
   top: 0;
-  z-index: 10; /* Ensure it stays above other content */
+  z-index: 10;
+  /* Ensure it stays above other content */
 }
+
 </style>

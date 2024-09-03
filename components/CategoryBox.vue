@@ -24,16 +24,17 @@ function handleClick() {
 </script>
 
 <template>
-  <div
-    @click="handleClick"
-    :class="`  flex flex-col items-center justify-center gap-2 p-3 border-b-2 hover:text-neutral-800 transition cursor-pointer ${
-      selected
-        ? 'border-b-neutral-800 text-neutral-800 '
-        : 'border-transparent text-neutral-500 '
-    }`">
-    <Icon
-      :name="icon"
-      class="size-8" />
-    <div class="font-semibold">{{ label }}</div>
-  </div>
+<div
+  @click="handleClick"
+  :class="`nav-item flex flex-col items-center justify-center gap-2 p-3 border-b-2 hover:text-neutral-800 transition cursor-pointer ${
+    selected
+      ? 'border-b-neutral-800 text-neutral-800'
+      : 'border-transparent text-neutral-500 hover:border-b-neutral-800'
+  }`"
+>
+  <Icon :name="icon" class="size-8" />
+  <div class="font-semibold">{{ label }}</div>
+</div>
+
 </template>
+

@@ -1,6 +1,6 @@
 <template>
-  <section class="z-10 w-full bg-white shadow-sm">
-    <Container>
+  <section class="z-10 w-full  shadow-sm">
+    <Container >
       <nav class="flex flex-col w-full">
         <div
           class="flex flex-wrap justify-between items-center px-6 py-4 w-full bg-white border-opacity-40 shadow-[0px_1px_1px_rgba(0,0,0,0.13)]">
@@ -15,7 +15,7 @@
           </div>
 
           <!-- Navigation Links -->
-          <div class="flex-1 flex flex-wrap gap-4 items-center justify-flex-start text-sm font-semibold text-black">
+          <div class="flex-1 flex flex-wrap gap-4 items-center justify-flex text-sm font-semibold text-black">
             <a href="#" class="py-2 hover:text-blue-600 transition duration-200 ease-in-out">Domů</a>
             <a href="#" @click="openModal" class="py-2 hover:text-blue-600 transition duration-200 ease-in-out">Přehled
               nabídky</a>
