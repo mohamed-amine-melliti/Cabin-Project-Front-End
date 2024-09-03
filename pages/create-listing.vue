@@ -79,7 +79,7 @@ function toggleSelection(label: string) {
       </div>
       <div class="flex flex-col gap-4 md:flex-row">
         <Button label="Back" outline @click="onBack" />
-        <Button style="background-color: blue;" label="Next" :disabled="!listingValues.category" @click="onNext" />
+        <Button style="background-color: blue;" label="Next"  @click="onNext" />
       </div>
     </div>
     <!----------------------------------------------------------->
@@ -207,8 +207,6 @@ function toggleSelection(label: string) {
               autoplay muted loop>
             </video>
           </article>
-
-
 
         </div>
       </section>
