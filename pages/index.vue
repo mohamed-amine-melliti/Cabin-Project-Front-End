@@ -4,6 +4,7 @@ import { useToast } from 'vue-toastification'
 const router = useRouter()
 const route = useRoute()
 const toast = useToast()
+const user = useUser()
 
 const { allListings, isLoading, fetchNextSet } = useFilteredPagination()
 
@@ -51,7 +52,7 @@ if (import.meta.client) {
     </Container>
 
     <Availablelocations></Availablelocations>
-    <RegistrationBanner></RegistrationBanner>
+    <RegistrationBanner v-if="!user"></RegistrationBanner>
 
     <MoreListings></MoreListings>
     <InspirationSection></InspirationSection>

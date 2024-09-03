@@ -28,7 +28,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="block ml-auto">
+  <div  style="z-index: 999;" class="block ml-auto">
     <div class="relative flex flex-row items-center justify-end gap-3">
    <!----   <NuxtLink to="/create-listing"
         class="hidden px-4 py-3 text-sm font-semibold transition rounded-full cursor-pointer lg:inline-block hover:bg-neutral-100">

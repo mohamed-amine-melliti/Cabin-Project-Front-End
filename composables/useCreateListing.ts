@@ -96,7 +96,7 @@ export function useCreateListing() {
   }
 
   async function createListing() {
-    if (steps.value !== STEPS.PRICE) return
+    if (steps.value !== STEPS.PUBLISH) return
     if (!validPrice()) return
 
     try {

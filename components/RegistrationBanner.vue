@@ -1,6 +1,6 @@
 <template>
 
-  <header
+  <header 
     class="flex flex-wrap justify-between items-center px-8 py-2.5 mt-14 mx-auto w-full max-w-6xl text-base leading-none text-white bg-black rounded-3xl max-md:mt-10 max-md:max-w-full">
 
     <div class="flex flex-wrap flex-1 shrink gap-6 items-center my-auto min-w-[240px] max-md:max-w-full">
@@ -13,7 +13,7 @@
       </p>
     </div>
 
-    <nav class="flex gap-4 items-center pr-1.5 my-auto text-center">
+    <nav  class="flex gap-4 items-center pr-1.5 my-auto text-center">
       <NuxtLink to="/register">
         <button class="gap-2.5 p-2.5 my-auto whitespace-nowrap bg-blue-600 rounded-[44px]">
           registrovat
