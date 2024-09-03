@@ -175,9 +175,7 @@ function toggleSelection(label: string) {
         <Button label="Back" outline @click="onBack" />
         <Button style="background-color: blue;" :disabled="!listingValues.price" label="Next" @click="onNext" />
       </div>
-
-
-     
+    
     </div>
     <!----------------------------------------------------------->
     <div class="flex flex-col gap-8" v-if="steps === STEPS.PUBLISH">
@@ -204,7 +202,7 @@ function toggleSelection(label: string) {
             </p>
 
 
-            <video loading="lazy" src="/finish.mp4" alt="Illustration representing the finish and publish step"
+            <video loading="eager" src="/finish.mp4" alt="Illustration representing the finish and publish step"
               class="object-contain self-stretch my-auto aspect-square min-w-[240px] w-[70px] max-md:max-w-full"
               autoplay muted loop>
             </video>

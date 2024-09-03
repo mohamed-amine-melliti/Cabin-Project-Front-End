@@ -15,7 +15,7 @@
           </div>
 
           <!-- Navigation Links -->
-          <div class="flex-1 flex flex-wrap gap-4 items-center justify-center text-sm font-semibold text-black">
+          <div class="flex-1 flex flex-wrap gap-4 items-center justify-flex-start text-sm font-semibold text-black">
             <a href="#" class="py-2 hover:text-blue-600 transition duration-200 ease-in-out">Domů</a>
             <a href="#" @click="openModal" class="py-2 hover:text-blue-600 transition duration-200 ease-in-out">Přehled
               nabídky</a>
