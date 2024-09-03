@@ -35,5 +35,5 @@ function handleClick() {
       :name="icon"
       class="size-8" />
     <div class="font-semibold">{{ label }}</div>
-  </div>
+  </div> 
 </template>
