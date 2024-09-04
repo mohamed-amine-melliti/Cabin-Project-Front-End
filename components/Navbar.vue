@@ -1,6 +1,6 @@
 <template>
   <section class="z-10 w-full  shadow-sm">
-    <Container >
+    <Container>
       <nav class="flex flex-col w-full">
         <div
           class="flex flex-wrap justify-between items-center px-6 py-4 w-full bg-white border-opacity-40 shadow-[0px_1px_1px_rgba(0,0,0,0.13)]">
@@ -15,15 +15,15 @@
           </div>
 
           <!-- Navigation Links -->
-          <div class="flex-1 flex flex-wrap gap-4 items-center justify-flex text-sm font-semibold text-black">
-            <a href="#" class="py-2 hover:text-blue-600 transition duration-200 ease-in-out">Domů</a>
-            <a href="#" @click="openModal" class="py-2 hover:text-blue-600 transition duration-200 ease-in-out">Přehled
-              nabídky</a>
-            <a href="#" class="py-2 hover:text-blue-600 transition duration-200 ease-in-out">O nás</a>
-          </div>
+          <nav class="nav-container">
+  <a href="#" class="nav-link">Domů</a>
+  <a href="#" class="nav-link">Přehled nabídky</a>
+  <a href="#" class="nav-link">O nás</a>
+</nav>
+
 
           <!-- User Options -->
-          <div class="flex gap-4 items-center py-2 text-sm text-blue-600 rounded-full">
+          <div class="flex gap-2 items-center py-2 text-sm text-blue-600 rounded-full">
             <!-- Dropdown Menu -->
             <div class="relative">
               <button @click="toggleDropdown" class="focus:outline-none">
@@ -96,6 +96,40 @@ const flags = [
 </script>
 
 <style scoped>
+
+/* Base styles for desktop */
+.nav-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Adjust gap as needed */
+  align-items: center;
+  padding: 0 1rem; /* Adjust padding as needed */
+  font-size: 0.875rem; /* Adjust font size as needed */
+  font-weight: 600;
+  color: black;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  text-decoration: none;
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 0.5rem; /* Adjust gap as needed */
+    padding: 0 0.5rem; /* Adjust padding as needed */
+  }
+
+  .nav-link {
+    text-align: center;
+    padding: 0.5rem 0; /* Adjust padding as needed */
+  }
+}
+
 .menu {
   position: relative;
   display: inline-block;
