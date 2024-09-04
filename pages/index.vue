@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { useToast } from 'vue-toastification'
+import AirbnbListing from '~/components/listing/AirbnbListing.vue';
 
 const router = useRouter()
 const route = useRoute()
@@ -49,6 +50,8 @@ if (import.meta.client) {
       <LoadingListingCards
         :cards="12"
         v-if="isLoading" />
+
+        <AirbnbListing></AirbnbListing>
     </Container>
 
     <Availablelocations></Availablelocations>
