@@ -45,13 +45,16 @@ if (import.meta.client) {
           v-for="listing in allListings"
           :listing
           :key="listing.id" />
+
+        
+
       </div>
       <Observer @intersect="fetchNextSet" />
       <LoadingListingCards
         :cards="12"
         v-if="isLoading" />
 
-        <AirbnbListing></AirbnbListing>
+        
     </Container>
 
     <Availablelocations></Availablelocations>
