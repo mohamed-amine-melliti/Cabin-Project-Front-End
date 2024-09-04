@@ -15,11 +15,12 @@
           </div>
 
           <!-- Navigation Links -->
-          <nav class="nav-container">
-  <a href="#" class="nav-link">Domů</a>
-  <a href="#" class="nav-link">Přehled nabídky</a>
-  <a href="#" class="nav-link">O nás</a>
+          <nav class="nav-container flex space-x-4">
+  <a href="#" class="nav-link hover:text-gray-900 hover:border-b-2 hover:border-gray-900">Domů</a>
+  <a href="#" class="nav-link hover:text-gray-900 hover:border-b-2 hover:border-gray-900">Přehled nabídky</a>
+  <a href="#" class="nav-link hover:text-gray-900 hover:border-b-2 hover:border-gray-900">O nás</a>
 </nav>
+
 
 
           <!-- User Options -->
@@ -96,15 +97,17 @@ const flags = [
 </script>
 
 <style scoped>
-
 /* Base styles for desktop */
 .nav-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem; /* Adjust gap as needed */
+  gap: 1rem;
+  /* Adjust gap as needed */
   align-items: center;
-  padding: 0 1rem; /* Adjust padding as needed */
-  font-size: 0.875rem; /* Adjust font size as needed */
+  padding: 0 1rem;
+  /* Adjust padding as needed */
+  font-size: 0.875rem;
+  /* Adjust font size as needed */
   font-weight: 600;
   color: black;
 }
@@ -112,7 +115,8 @@ const flags = [
 .nav-link {
   display: flex;
   align-items: center;
-  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  padding: 0.5rem 1rem;
+  /* Adjust padding as needed */
   text-decoration: none;
 }
 
@@ -120,13 +124,16 @@ const flags = [
 @media (max-width: 767px) {
   .nav-container {
     flex-direction: column;
-    gap: 0.5rem; /* Adjust gap as needed */
-    padding: 0 0.5rem; /* Adjust padding as needed */
+    gap: 0.5rem;
+    /* Adjust gap as needed */
+    padding: 0 0.5rem;
+    /* Adjust padding as needed */
   }
 
   .nav-link {
     text-align: center;
-    padding: 0.5rem 0; /* Adjust padding as needed */
+    padding: 0.5rem 0;
+    /* Adjust padding as needed */
   }
 }
 
