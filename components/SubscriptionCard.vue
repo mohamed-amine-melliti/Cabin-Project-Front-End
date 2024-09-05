@@ -62,11 +62,50 @@
   article {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
   }
   
   article:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  header {
+    background-color: #1f2937;
+    color: #fff;
+    text-align: center;
+    border-bottom: 2px solid #374151;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  h3 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  li img {
+    margin-right: 0.5rem;
+  }
+  
+  p {
+    text-align: center;
+    margin-top: 1rem;
   }
   
   .bg-neutral-500 {

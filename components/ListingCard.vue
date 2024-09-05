@@ -63,6 +63,8 @@ function favorited(id: string) {
             @favorited="favorited(listing.id)"
           />
         </div>
+
+
       </div>
       <!-- Content Section -->
       <div class="p-4 flex flex-col gap-2">

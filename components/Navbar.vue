@@ -16,10 +16,14 @@
 
           <!-- Navigation Links -->
           <nav class="nav-container flex space-x-4">
-  <a href="#" class="nav-link hover:text-gray-900 hover:border-2 hover:border-gray-300 hover:rounded-full">Domů</a>
-  <a href="#" class="nav-link hover:text-gray-900 hover:border-2 hover:border-gray-300 hover:rounded-full">Přehled nabídky</a>
-  <a href="#" class="nav-link hover:text-gray-900 hover:border-2 hover:border-gray-300 hover:rounded-full">O nás</a>
-</nav>
+            <a href="#"
+              class="nav-link hover:text-gray-900 hover:border-2 hover:border-gray-300 hover:rounded-full">Domů</a>
+            <a href="#"
+              class="nav-link hover:text-gray-900 hover:border-2 hover:border-gray-300 hover:rounded-full">Přehled
+              nabídky</a>
+            <a href="#" class="nav-link hover:text-gray-900 hover:border-2 hover:border-gray-300 hover:rounded-full">O
+              nás</a>
+          </nav>
 
 
 

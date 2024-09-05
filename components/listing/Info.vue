@@ -23,6 +23,8 @@ const coordinates = getByValue(locationValue)?.latlng
 </script>
 <template>
   <div class="col-span-4 flex flex-col gap-8">
+
+    
     <div class="flex flex-col gap2">
       <UserInfo
         v-if="user"
