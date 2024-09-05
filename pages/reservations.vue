@@ -45,13 +45,10 @@ useSeoMeta({
           class="grid grid-cols-1 gap-8 mt-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6"
           v-if="!!myReservations">
           <template v-for="listing in myReservations" :key="listing.id">
-       <!----    <ListingCard v-for="reservation in listing.reservations" :key="listing?.id" :listing :reservation
-              actionLabel="Cancel guest reservation" :actionId="reservation.id" @action="cancelReservation" /> --> 
+          <ListingCard v-for="reservation in listing.reservations" :key="listing?.id" :listing :reservation
+              actionLabel="Cancel guest reservation" :actionId="reservation.id" @action="cancelReservation" /> 
 
            
-              <ReservationListingCard v-for="reservation in listing.reservations" :key="reservation.id" :listing="listing"
-              :reservation="reservation" actionLabel="Cancel guest reservation" :actionId="reservation.id"
-              @action="cancelReservation" />
               
           </template>
         </div>

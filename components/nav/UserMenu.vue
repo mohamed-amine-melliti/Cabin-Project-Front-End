@@ -28,7 +28,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="block ml-auto">
+  <div style="z-index: 999;" class="block ml-auto">
   <div class="relative flex flex-row items-center justify-end gap-3">
     <div class="relative inline-block text-left shrink-0 menu-dropdown">
       <div v-if="!!user">

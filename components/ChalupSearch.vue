@@ -8,8 +8,8 @@
         </div>
   
         <!-- Centered Main Content -->
-        <div class="relative z-10 flex flex-col items-center justify-center w-full max-w-[1479px] text-center text-white px-4">
-          <h1 class="text-3xl md:text-4xl font-extrabold leading-snug mb-4 drop-shadow-lg">
+        <div style="z-index: 1;" class="relative z-10 flex flex-col items-center justify-center w-full max-w-[1479px] text-center text-white px-4">
+          <h1  class="text-3xl md:text-4xl font-extrabold leading-snug mb-4 drop-shadow-lg">
             Vítejte, hledej chalupu
           </h1>
   
