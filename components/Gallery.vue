@@ -48,6 +48,7 @@ import ProceedToPaymentFromListing from './ProceedToPaymentFromListing.vue';
 export default defineComponent({
     name: 'ProductGallery',
     components: {
+
         ProceedToPaymentFromListing,
     },
 

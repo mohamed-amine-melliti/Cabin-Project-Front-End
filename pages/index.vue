@@ -54,8 +54,7 @@ if (import.meta.client) {
         :cards="12"
         v-if="isLoading" />
 
-        <ReservationListingCard  />      
-
+        <ReservationListingCard  />
 
     </Container>
 

@@ -51,5 +51,9 @@ const coordinates = getByValue(locationValue)?.latlng
     <ClientOnly>
       <Map :center="coordinates" />
     </ClientOnly>
+
+    <HostInfoHostProfile :user ></HostInfoHostProfile>
+
   </div>
+
 </template>
