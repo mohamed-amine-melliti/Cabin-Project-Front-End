@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useImage } from '@vueuse/core'
+import Gallery from '../Gallery.vue';
 
 type ListingHeadProps = {
   id: string
@@ -16,6 +17,8 @@ const { isLoading } = useImage({ src: imageSrc })
 
 <template>
   <div>
+
+
     <Heading
       :title="title"
       :subTitle="`${location?.flag} ${location?.label}, ${location?.region} `" />
@@ -31,15 +34,18 @@ const { isLoading } = useImage({ src: imageSrc })
     </div>
 
     <div
-      class="w-full h-[60vh] overflow-hidden rounded-xl relative my-2"
       v-else>
-      <NuxtImg
+     <!--- <NuxtImg
         loading="eager"
         provider="cloudinary"
         format="webp"
         :src="imageSrc"
         :alt="`Image of ${location?.label}`"
-        class="object-fill object-center h-full w-full rounded-xl" />
+        class="object-fill object-center h-full w-full rounded-xl" /> --->
+
+          <Gallery  :mainImageSrc="imageSrc" 
+           ></Gallery>
+
       <div class="absolute top-5 right-5">
         <HeartButton :listingId="id" />
       </div>
