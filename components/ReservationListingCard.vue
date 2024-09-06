@@ -9,9 +9,10 @@
       </div>
     </div>
     <div class="p-4">
-      <p class="uppercase tracking-wide text-sm font-bold text-gray-700">Detached house • 5y old</p>
-      <p class="text-3xl text-gray-900">$750,000</p>
-      <p class="text-gray-700">742 Evergreen Terrace</p>
+      <p class="uppercase tracking-wide text-sm font-bold text-gray-700"> • 5y old</p>
+      <p class="text-3xl text-gray-900">${{ totalPrice || price }} • Per Night</p>
+      <p class="text-gray-700">          {{ location?.flag }} {{ location?.label }}, {{ location?.region }}
+      </p>
     </div>
     <div class="flex p-4 border-t border-gray-300 text-gray-700">
       <div class="flex-1 inline-flex items-center">
@@ -28,7 +29,7 @@
       </div>
     </div>
     <div class="px-4 pt-3 pb-4 border-t border-gray-300 bg-gray-100">
-      <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">Realtor</div>
+      <div class="text-xs uppercase font-bold text-gray-600 tracking-wide">Owner</div>
       <div class="flex items-center pt-2">
         <div class="bg-cover bg-center w-10 h-10 rounded-full mr-3"
           style="background-image: url(https://images.unsplash.com/photo-1500522144261-ea64433bbe27?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=751&q=80)">
@@ -53,6 +54,8 @@ type ListingCardProps = {
   actionLabel?: string
   actionId?: string
   totalPrice?: number
+  title?: string
+
 }
 
 const { listing, reservation } = defineProps<ListingCardProps>()
