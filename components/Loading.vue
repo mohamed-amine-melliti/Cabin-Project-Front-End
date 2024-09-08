@@ -1,18 +1,27 @@
 <template>
-    <div class="fixed inset-0 flex items-center justify-center bg-white z-50">
-      <div class="spinner-border animate-spin inline-block w-8 h-8 border-4 rounded-full border-current border-t-transparent text-blue-600" role="status">
-        <img loading="lazy"
-                    src="/1.avif"
-                    />      </div>
+    <div v-if="loading" class="loader">
+      <img src="/Mega.Chalupy.gif" alt="Loading..." />
     </div>
   </template>
   
+  <script setup>
+  import { ref, onMounted } from 'vue';
+  
+  const loading = ref(true);
+  
+  onMounted(() => {
+    setTimeout(() => {
+      loading.value = false;
+    }, 3000); // 3 seconds
+  });
+  </script>
+  
   <style scoped>
-  .spinner-border {
-    border-width: 4px;
-    border-radius: 50%;
-    border-top-color: transparent;
-    border-right-color: transparent;
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
   </style>
   

@@ -11,6 +11,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxt/fonts',
     'nuxt-rate-limit',
+    'shadcn-nuxt',
   ],
 
   experimental: {

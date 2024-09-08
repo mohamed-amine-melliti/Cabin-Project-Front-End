@@ -1,24 +1,20 @@
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue'
 import { useToast } from 'vue-toastification'
-import AirbnbListing from '~/components/listing/AirbnbListing.vue'
-import Loading from '~/components/Loading.vue' // Import your loading component
+import AirbnbListing from '~/components/listing/AirbnbListing.vue';
+import Loading from '~/components/Loading.vue';
 
 const router = useRouter()
 const route = useRoute()
 const toast = useToast()
 const user = useUser()
+const loading = ref(true);
+
+setTimeout(() => {
+  loading.value = false;
+}, 3000); // 3 seconds
+
 
 const { allListings, isLoading, fetchNextSet } = useFilteredPagination()
-
-const showLoading = ref(true) // Ref to manage the loading state
-
-onMounted(() => {
-  // Set timeout to stop showing the loading component after 3 seconds
-  setTimeout(() => {
-    showLoading.value = false
-  }, 3000)
-})
 
 if (import.meta.client) {
   if (route.fullPath.includes('?email=verified')) {
@@ -39,19 +35,18 @@ if (import.meta.client) {
     router.replace(url.pathname + url.search)
   }
 }
-
 </script>
 
 <template>
+
   <section>
     <Container>
       <ChalupSearch></ChalupSearch>
 
       <!-- Show loading component initially -->
-      <Loading v-if="showLoading" />
 
       <!-- Main content -->
-      <div v-if="!showLoading">
+      <div>
         <IsEmpty v-if="!isLoading && allListings?.length === 0" :showReset="true" />
   
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" v-if="allListings && allListings.length > 0">

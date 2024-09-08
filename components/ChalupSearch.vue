@@ -19,7 +19,7 @@
             <div class="flex flex-wrap gap-4 w-full">
               <!-- DestinationSelect Component -->
               <div class="relative flex items-center p-3 bg-white rounded-full shadow-sm border border-gray-200 flex-1 min-w-[240px] lg:min-w-[250px]" >
-                <img loading="lazy"
+                <img loading="eager"
                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/9e4ea68a008ae9dd183ee824e10715869e80b1eb05e7139f33595a2df3614bb8?placeholderIfAbsent=true&apiKey=cefca70c5e3e4c30aa4a14ad34b27ffa"
                      alt="destination-icon" class="w-5 h-5 mr-2" />
                 <label for="destination" class="sr-only">Going to</label>
