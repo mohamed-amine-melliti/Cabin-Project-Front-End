@@ -56,10 +56,10 @@ async function toggleFavorite(e: MouseEvent) {
     <Icon
       name="material-symbols:favorite"
       v-if="isFavorite"
-      class="size-10 text-rose-500 absolute -top-[2px] -right-[2px]" />
+      class="size-6 text-rose-500 absolute -top-[2px] -right-[2px]" />
     <Icon
       name="material-symbols:favorite-outline"
       v-else
-      class="size-10 text-white hover:text-rose-500 transition absolute -top-[2px] -right-[2px]" />
+      class="size-6 text-white hover:text-rose-500 transition absolute -top-[2px] -right-[2px]" />
   </div>
 </template>
